@@ -6,10 +6,24 @@
   transform: translateY(-50%);
 }
 
-/* HORIZONTAL MEDIA QUERIES */
-@mixin horizontal($pixels) {
+/* LANDSCAPE MEDIA QUERIES */
+@mixin landscape($pixels) {
   @media only screen and (min-width: $pixels) and (max-width: 1024px) and (orientation: landscape) {
       @content;
+  }
+}
+
+/* PORTRAIT MEDIA QUERIES */
+@mixin portrait($pixel) {
+  @media only screen and (min-width: $pixel) and (orientation: portrait) {
+    @content;
+  }
+}
+
+/* DESKTOP MEDIA QUERY */
+@mixin desktop($size) {
+  @media only screen and (min-width: $size) {
+    @content;
   }
 }
 

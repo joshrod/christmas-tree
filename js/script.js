@@ -1,5 +1,5 @@
 const lightbox = document.querySelector('.lightbox');
-const cards = document.querySelectorAll('.card');
+const icons = document.querySelectorAll('.icon');
 const lbImages = document.querySelectorAll('.img-container');
 const snippets = document.querySelectorAll('.snippet');
 const close = document.querySelector('.lb-close');
@@ -16,8 +16,8 @@ window.onload = () => {
         snippet.style.display = 'none';
     }
 
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].onclick = () => openLightbox(i);
+    for (let i = 0; i < icons.length; i++) {
+        icons[i].onclick = () => openLightbox(i);
     }
 
     close.onclick = () => {
@@ -32,7 +32,7 @@ function openLightbox(index) {
     lbOpen = true;
     current = index;
     let tl = new TimelineMax();
-    tl.to(cards[index], 0.2, {y: -20, ease:Power2.easeOut}).to(cards[index], 0.3, {y: 0, ease: Bounce.easeOut, onComplete: function() {
+    tl.to(icons[index], 0.2, {y: -20, ease:Power2.easeOut}).to(icons[index], 0.3, {y: 0, ease: Bounce.easeOut, onComplete: function() {
         lightbox.classList.remove('is-hidden');
         lightbox.classList.add('is-visible');
         lbImages[index].style.display = 'block';

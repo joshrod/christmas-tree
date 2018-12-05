@@ -1,6 +1,11 @@
 @import 'mixins';
 @import 'vars';
 
+
+/*
+ *   GLOBAL STYLING
+ */
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -31,29 +36,54 @@ p {
     margin: 0;
 }
 
-.gifts-container {
+/*
+ *  MOBILE EXPERIENCE STYLING
+ */
+
+.icons-container {
     width: 100%;
     height: auto;
+    /* REMOVE WHEN DONE*/
+    display: none;
 
-    .gifts-row {
+    .icons-row {
         width: 100%;
-        margin-top: 1.5rem;
+        margin-top: 2rem;
         padding-left: 4%;
         padding-right: 4%;
         display: flex;
         justify-content: space-between;
-        
+        @include portrait(720px) {
+            margin-top: 6rem;
+        }
+        @include landscape (460px) {
+            margin-top: 1.5rem;
+        }
+        @include landscape(840px) {
+            margin-top: 3rem;
+        }
+        @include landscape(1000px) {
+            margin-top: 4rem;
+        }
 
-        .card {
+        .icon {
             width: 19vw;
             height: 19vw;
             cursor: pointer;
             border-radius: 1rem;
             overflow: hidden;
             transition: width 0.7s, height 0.7s;
-            @include horizontal(400px) {
+            @include landscape(400px) {
                 width: 15vh;
                 height: 15vh;
+            }
+            @include landscape(1000px) {
+                width: 13vh;
+                height: 13vh;
+            }
+            @include portrait(720px) {
+                width: 14vw;
+                height: 14vw;
             }
         }
     }
@@ -74,7 +104,7 @@ p {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        @include horizontal(400px) {
+        @include landscape(400px) {
             width: 90%;
             height: 80%;
         }
@@ -112,7 +142,7 @@ p {
         .img-container {
             margin-bottom: 3rem;
             opacity: 1;
-            @include horizontal(400px) {
+            @include landscape(400px) {
                 width: 49%;
                 position: absolute;
                 right: 0;
@@ -122,7 +152,7 @@ p {
         .snippet {
             text-align: center;
             opacity: 1;
-            @include horizontal(400px) {
+            @include landscape(400px) {
                 width: 49%;
                 position: absolute;
                 top: 50%;
@@ -135,6 +165,9 @@ p {
                 margin-left: auto;
                 margin-right: auto;
                 color: darkred;
+                @include portrait(720px) {
+                    font-size: 2.4rem;
+                }
             }
         }
     }
@@ -151,3 +184,8 @@ p {
     z-index: 2;
     visibility: visible;
 }
+
+/*
+ *  DESKTOP EXPERIENCE STYLING
+ */
+ 

@@ -1,5 +1,7 @@
 /* CENTER VERTICALLY */
-/* HORIZONTAL MEDIA QUERIES */
+/* LANDSCAPE MEDIA QUERIES */
+/* PORTRAIT MEDIA QUERIES */
+/* DESKTOP MEDIA QUERY */
 /* KEYFRAMES */
 /* CLEARFIX MIXIN */
 body {
@@ -15,6 +17,9 @@ body:after {
   clear: both;
 }
 
+/*
+ *   GLOBAL STYLING
+ */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -45,14 +50,19 @@ p {
   margin: 0;
 }
 
-.gifts-container {
+/*
+ *  MOBILE EXPERIENCE STYLING
+ */
+.icons-container {
   width: 100%;
   height: auto;
+  /* REMOVE WHEN DONE*/
+  display: none;
 }
 
-.gifts-container .gifts-row {
+.icons-container .icons-row {
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   padding-left: 4%;
   padding-right: 4%;
   display: -webkit-box;
@@ -63,7 +73,31 @@ p {
           justify-content: space-between;
 }
 
-.gifts-container .gifts-row .card {
+@media only screen and (min-width: 720px) and (orientation: portrait) {
+  .icons-container .icons-row {
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-row {
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 840px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-row {
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-row {
+    margin-top: 4rem;
+  }
+}
+
+.icons-container .icons-row .icon {
   width: 19vw;
   height: 19vw;
   cursor: pointer;
@@ -74,9 +108,23 @@ p {
 }
 
 @media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
-  .gifts-container .gifts-row .card {
+  .icons-container .icons-row .icon {
     width: 15vh;
     height: 15vh;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-row .icon {
+    width: 13vh;
+    height: 13vh;
+  }
+}
+
+@media only screen and (min-width: 720px) and (orientation: portrait) {
+  .icons-container .icons-row .icon {
+    width: 14vw;
+    height: 14vw;
   }
 }
 
@@ -178,6 +226,12 @@ p {
   color: darkred;
 }
 
+@media only screen and (min-width: 720px) and (orientation: portrait) {
+  .lightbox .lb-content .snippet p {
+    font-size: 2.4rem;
+  }
+}
+
 .is-hidden {
   z-index: -3;
   opacity: 0;
@@ -189,4 +243,8 @@ p {
   z-index: 2;
   visibility: visible;
 }
+
+/*
+ *  DESKTOP EXPERIENCE STYLING
+ */
 /*# sourceMappingURL=main.css.map */
