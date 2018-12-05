@@ -15,6 +15,7 @@ html, body {
 
 body {
     @extend %clearfix;
+    background: #fffafa;
     position: relative;
     font-size: 16px;
     font-size: 1.6rem;
@@ -44,11 +45,16 @@ p {
         
 
         .card {
-            width: 20vw;
-            height: 20vw;
+            width: 19vw;
+            height: 19vw;
             cursor: pointer;
             border-radius: 1rem;
             overflow: hidden;
+            transition: width 0.7s, height 0.7s;
+            @include horizontal(400px) {
+                width: 15vh;
+                height: 15vh;
+            }
         }
     }
 }
@@ -59,35 +65,76 @@ p {
     height: 100%;
     top: 0; 
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     transition: 0.5s;
 
     .lb-content {
+        width: 80%;
         position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        @include horizontal(400px) {
+            width: 90%;
+            height: 80%;
+        }
+
+        .lb-close {
+            width: 3rem;
+            height: 3rem;
+            padding: 0.5rem;
+            position: absolute;
+            border-radius: 3rem;
+            top: -1rem;
+            right: -1rem;
+            z-index: 2;
+            opacity: 1;
+            text-align: center;
+            background: darkred;
+            cursor: pointer;
+            &:before, &:after {
+                position: absolute;
+                top: 0.65rem;
+                left: 1.4rem;
+                content: ' ';
+                height: 1.7rem;
+                width: 0.2rem;
+                background-color: white;
+            }
+            &:before {
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
 
         .img-container {
             margin-bottom: 3rem;
             opacity: 1;
-
-            img {
-                width: 80%;
-                margin-left: auto;
-                margin-right: auto;
+            @include horizontal(400px) {
+                width: 49%;
+                position: absolute;
+                right: 0;
             }
         }
     
         .snippet {
             text-align: center;
             opacity: 1;
+            @include horizontal(400px) {
+                width: 49%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
     
             p {
-                width: 80%;
+                width: 100%;
                 margin-left: auto;
                 margin-right: auto;
-                color: white;
+                color: darkred;
             }
         }
     }
