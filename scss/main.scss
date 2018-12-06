@@ -189,3 +189,77 @@ p {
  *  DESKTOP EXPERIENCE STYLING
  */
  
+ .tree-container {
+
+    .gift {
+        position: relative;
+
+        .card-toggle {
+            display: none;
+            &:checked {
+
+                + .card {
+                    
+                    .front,
+                    .inner-left {
+                        transform: rotateY(-165deg);
+                    }
+                    .inner-right {
+                        transform: rotateY(-15deg);
+                    }
+                }
+            }
+        }
+
+        .card {
+            display: block;
+            width: 15rem;
+            height: 15rem;
+            position: relative;
+            perspective: 700;
+            margin: 3rem auto;
+            cursor: pointer;
+            &:hover {
+                .face {
+                    transition: all 0.3s ease-out;
+                }
+
+                .front,
+                .inner-left {
+                    transform: rotateY(-35deg);
+                }
+
+            }
+        }
+        
+
+        .face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: visible;
+            transition: all 0.5s ease-out;
+            transform-origin: 0 0;
+        }
+
+        .front {
+            backface-visibility: hidden;
+            z-index: 3;
+        }
+
+        .inner-left {
+            background: salmon;
+            z-index: 2;
+            & > p {
+                transform: rotateY(-180deg);
+            }
+        }
+
+        .inner-right {
+            transform: rotateY(0deg);
+            z-index: 1;
+        }
+    }
+ }
