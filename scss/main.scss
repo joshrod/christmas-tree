@@ -99,6 +99,7 @@ p {
     transition: 0.5s;
 
     .lb-content {
+        @extend %clearfix;
         width: 80%;
         position: relative;
         top: 50%;
@@ -106,7 +107,6 @@ p {
         transform: translate(-50%, -50%);
         @include landscape(400px) {
             width: 90%;
-            height: 80%;
         }
 
         .lb-close {
@@ -143,9 +143,9 @@ p {
             margin-bottom: 3rem;
             opacity: 1;
             @include landscape(400px) {
-                width: 49%;
-                position: absolute;
-                right: 0;
+                width: 45%;
+                margin-bottom: 0;
+                float: right;
             }
         }
     
@@ -153,7 +153,7 @@ p {
             text-align: center;
             opacity: 1;
             @include landscape(400px) {
-                width: 49%;
+                width: 45%;
                 position: absolute;
                 top: 50%;
                 left: 0;
@@ -190,76 +190,82 @@ p {
  */
  
  .tree-container {
+    // display: none;
+    .gift-row {
+        display: flex;
+        justify-content: center;
+        align-content: center;
 
-    .gift {
-        position: relative;
-
-        .card-toggle {
-            display: none;
-            &:checked {
-
-                + .card {
-                    
+        .gift {
+            position: relative;
+            margin: 0.8rem;
+            display: block;
+            .card-toggle {
+                display: none;
+                &:checked {
+    
+                    + .card {
+                        
+                        .front,
+                        .inner-left {
+                            transform: rotateY(-165deg);
+                        }
+                        .inner-right {
+                            transform: rotateY(-15deg);
+                        }
+                    }
+                }
+            }
+    
+            .card {
+                display: block;
+                width: 9rem;
+                height: 9rem;
+                position: relative;
+                perspective: 700;
+                cursor: pointer;
+                &:hover {
+                    .face {
+                        transition: all 0.3s ease-out;
+                    }
+    
                     .front,
                     .inner-left {
-                        transform: rotateY(-165deg);
+                        transform: rotateY(-35deg);
                     }
-                    .inner-right {
-                        transform: rotateY(-15deg);
-                    }
+    
                 }
             }
-        }
-
-        .card {
-            display: block;
-            width: 15rem;
-            height: 15rem;
-            position: relative;
-            perspective: 700;
-            margin: 3rem auto;
-            cursor: pointer;
-            &:hover {
-                .face {
-                    transition: all 0.3s ease-out;
-                }
-
-                .front,
-                .inner-left {
-                    transform: rotateY(-35deg);
-                }
-
+    
+            .face {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backface-visibility: visible;
+                transition: all 0.5s ease-out;
+                transform-origin: 0 0;
             }
-        }
-        
-
-        .face {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backface-visibility: visible;
-            transition: all 0.5s ease-out;
-            transform-origin: 0 0;
-        }
-
-        .front {
-            backface-visibility: hidden;
-            z-index: 3;
-        }
-
-        .inner-left {
-            background: salmon;
-            z-index: 2;
-            & > p {
-                transform: rotateY(-180deg);
+    
+            .front {
+                backface-visibility: hidden;
+                z-index: 3;
             }
-        }
-
-        .inner-right {
-            transform: rotateY(0deg);
-            z-index: 1;
+    
+            .inner-left {
+                background: salmon;
+                z-index: 2;
+                & > p {
+                    font-size: 1rem;
+                    transform: rotateY(-180deg);
+                }
+            }
+    
+            .inner-right {
+                transform: rotateY(0deg);
+                z-index: 1;
+            }
         }
     }
  }

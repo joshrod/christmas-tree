@@ -1,8 +1,10 @@
+const body = document.querySelector('body');
 const lightbox = document.querySelector('.lightbox');
 const icons = document.querySelectorAll('.icon');
 const lbImages = document.querySelectorAll('.img-container');
 const snippets = document.querySelectorAll('.snippet');
 const close = document.querySelector('.lb-close');
+const cards = document.querySelectorAll('.card');
 
 let lbOpen = false;
 let current = null;

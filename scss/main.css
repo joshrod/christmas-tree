@@ -4,16 +4,16 @@
 /* DESKTOP MEDIA QUERY */
 /* KEYFRAMES */
 /* CLEARFIX MIXIN */
-body {
+body, .lightbox .lb-content {
   zoom: 1;
 }
 
-body:before, body:after {
+body:before, .lightbox .lb-content:before, body:after, .lightbox .lb-content:after {
   content: " ";
   display: table;
 }
 
-body:after {
+body:after, .lightbox .lb-content:after {
   clear: both;
 }
 
@@ -151,7 +151,6 @@ p {
 @media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
   .lightbox .lb-content {
     width: 90%;
-    height: 80%;
   }
 }
 
@@ -197,9 +196,9 @@ p {
 
 @media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
   .lightbox .lb-content .img-container {
-    width: 49%;
-    position: absolute;
-    right: 0;
+    width: 45%;
+    margin-bottom: 0;
+    float: right;
   }
 }
 
@@ -210,7 +209,7 @@ p {
 
 @media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
   .lightbox .lb-content .snippet {
-    width: 49%;
+    width: 45%;
     position: absolute;
     top: 50%;
     left: 0;
@@ -247,48 +246,60 @@ p {
 /*
  *  DESKTOP EXPERIENCE STYLING
  */
-.tree-container .gift {
-  position: relative;
+.tree-container .gift-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-.tree-container .gift .card-toggle {
+.tree-container .gift-row .gift {
+  position: relative;
+  margin: 0.8rem;
+  display: block;
+}
+
+.tree-container .gift-row .gift .card-toggle {
   display: none;
 }
 
-.tree-container .gift .card-toggle:checked + .card .front,
-.tree-container .gift .card-toggle:checked + .card .inner-left {
+.tree-container .gift-row .gift .card-toggle:checked + .card .front,
+.tree-container .gift-row .gift .card-toggle:checked + .card .inner-left {
   -webkit-transform: rotateY(-165deg);
           transform: rotateY(-165deg);
 }
 
-.tree-container .gift .card-toggle:checked + .card .inner-right {
+.tree-container .gift-row .gift .card-toggle:checked + .card .inner-right {
   -webkit-transform: rotateY(-15deg);
           transform: rotateY(-15deg);
 }
 
-.tree-container .gift .card {
+.tree-container .gift-row .gift .card {
   display: block;
-  width: 15rem;
-  height: 15rem;
+  width: 9rem;
+  height: 9rem;
   position: relative;
   -webkit-perspective: 700;
           perspective: 700;
-  margin: 3rem auto;
   cursor: pointer;
 }
 
-.tree-container .gift .card:hover .face {
+.tree-container .gift-row .gift .card:hover .face {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-.tree-container .gift .card:hover .front,
-.tree-container .gift .card:hover .inner-left {
+.tree-container .gift-row .gift .card:hover .front,
+.tree-container .gift-row .gift .card:hover .inner-left {
   -webkit-transform: rotateY(-35deg);
           transform: rotateY(-35deg);
 }
 
-.tree-container .gift .face {
+.tree-container .gift-row .gift .face {
   position: absolute;
   top: 0;
   left: 0;
@@ -302,23 +313,24 @@ p {
           transform-origin: 0 0;
 }
 
-.tree-container .gift .front {
+.tree-container .gift-row .gift .front {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 3;
 }
 
-.tree-container .gift .inner-left {
+.tree-container .gift-row .gift .inner-left {
   background: salmon;
   z-index: 2;
 }
 
-.tree-container .gift .inner-left > p {
+.tree-container .gift-row .gift .inner-left > p {
+  font-size: 1rem;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
 }
 
-.tree-container .gift .inner-right {
+.tree-container .gift-row .gift .inner-right {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
   z-index: 1;
