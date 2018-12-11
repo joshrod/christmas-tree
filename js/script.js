@@ -1,16 +1,24 @@
-const body = document.querySelector('body');
+/* VARS USED IN MOBILE EXPERIENCE */
 const lightbox = document.querySelector('.lightbox');
 const icons = document.querySelectorAll('.icon');
 const lbImages = document.querySelectorAll('.img-container');
 const snippets = document.querySelectorAll('.snippet');
 const close = document.querySelector('.lb-close');
-const cards = document.querySelectorAll('.card');
+
+/* VARS USED IN DESKTOP EXPERIENCE */
+const gifts = document.querySelectorAll('.gift');
+
+/* CENTER OF WINDOW */
+let xCenter = window.innerWidth / 2;
+let yCenter = window.innerHeight / 2;
 
 let lbOpen = false;
 let current = null;
 
 
 window.onload = () => {
+
+    // Hide all pictures and captions in lightbox
     for (let i = 0; i < lbImages.length; i++) {
         const image = lbImages[i];
         const snippet = snippets[i];
@@ -18,12 +26,39 @@ window.onload = () => {
         snippet.style.display = 'none';
     }
 
+    // Add eventListener for every icon
     for (let i = 0; i < icons.length; i++) {
         icons[i].onclick = () => openLightbox(i);
     }
-
+    
     close.onclick = () => {
         closeLightbox();
+    }
+
+    for (let i = 0; i < gifts.length; i++) {
+        const gift = gifts[i];
+        gift.onclick = () => {
+            const clone = cloneOnTop(gift);
+            document.body.appendChild(clone);
+            gift.style.visibility = 'hidden';
+            zoomEffect(clone);
+
+            /* TODO: Move faces to the zoomEffect function */
+            
+            const faces = clone.querySelectorAll('.face');
+            for (let j = 0; j < 2; j++) {
+                const face = faces[j];
+                TweenMax.to(face, 0.2, {rotationY: -165});
+            }
+
+        //     console.log('gift' + i + 'clicked');
+        //     e.preventDefault();
+        //     const clone = cloneOnTop(gift);
+        //     console.log(clone.children[0]);
+        //     document.body.appendChild(clone);
+        //     // clone.children[0].checked = true;
+        //     zoomEffect(clone);
+        }
     }
 }
 
@@ -55,4 +90,28 @@ function closeLightbox() {
     close.style.display = 'none';
     current = null;
     lbOpen = false;
+}
+
+function cloneOnTop(el) {
+    const box = el.getBoundingClientRect();
+    const clone = el.cloneNode(true);
+    clone.style.width = `${box.width}px`;
+    clone.style.height = `${box.height}px`;
+    clone.style.top = box.top + 'px';
+    clone.style.left = box.left + 'px';
+    clone.classList.add('clone');
+    return clone;
+}
+
+function zoomEffect(element) {
+    const tl = new TimelineMax();
+    const x = element.offsetLeft;
+    const y = element.offsetTop;
+    const cy = y + (element.offsetHeight / 2);
+    const ratio = (0.65 * window.innerWidth) / (element.offsetWidth * 2) ;
+
+    const text = element.querySelector('p');
+    tl.addLabel('openCard')
+    .to(element, 0.8, {x: xCenter - x, y: yCenter - cy, scale: ratio, ease: Power4.easeOut})
+    .to(text, 0.5, {opacity: 1});
 }

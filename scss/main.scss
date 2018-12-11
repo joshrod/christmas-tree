@@ -24,6 +24,7 @@ body {
     position: relative;
     font-size: 16px;
     font-size: 1.6rem;
+    overflow: hidden;
 }
 
 img {
@@ -189,83 +190,87 @@ p {
  *  DESKTOP EXPERIENCE STYLING
  */
  
- .tree-container {
-    // display: none;
+.tree-container {
+// display: none;
+
     .gift-row {
         display: flex;
         justify-content: center;
         align-content: center;
 
-        .gift {
-            position: relative;
+        .gift, .box {
             margin: 0.8rem;
-            display: block;
-            .card-toggle {
-                display: none;
-                &:checked {
-    
-                    + .card {
-                        
-                        .front,
-                        .inner-left {
-                            transform: rotateY(-165deg);
-                        }
-                        .inner-right {
-                            transform: rotateY(-15deg);
-                        }
-                    }
-                }
-            }
-    
+
             .card {
-                display: block;
-                width: 9rem;
-                height: 9rem;
-                position: relative;
-                perspective: 700;
-                cursor: pointer;
                 &:hover {
                     .face {
                         transition: all 0.3s ease-out;
                     }
-    
+            
                     .front,
                     .inner-left {
                         transform: rotateY(-35deg);
                     }
-    
                 }
-            }
-    
-            .face {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                backface-visibility: visible;
-                transition: all 0.5s ease-out;
-                transform-origin: 0 0;
-            }
-    
-            .front {
-                backface-visibility: hidden;
-                z-index: 3;
-            }
-    
-            .inner-left {
-                background: salmon;
-                z-index: 2;
-                & > p {
-                    font-size: 1rem;
-                    transform: rotateY(-180deg);
-                }
-            }
-    
-            .inner-right {
-                transform: rotateY(0deg);
-                z-index: 1;
             }
         }
     }
- }
+}
+
+.gift, .box {
+    position: relative;
+    width: 9rem;
+    height: 9rem;
+    display: block;
+}
+
+.card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 700;
+    cursor: pointer;
+}
+
+.face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: visible;
+    transform-origin: 0 0;
+    transition: all 0.5s ease-out;
+}
+
+.front {
+    backface-visibility: hidden;
+    z-index: 3;
+}
+
+.inner-left {
+    background: rgb(231, 231, 231);
+    z-index: 2;
+    & > p {
+        opacity: 0;
+        font-size: 0.4rem;
+        transform: rotateY(-180deg);
+    }
+}
+
+.inner-right {
+    transform: rotateY(0deg);
+    z-index: 1;
+}
+
+.clone {
+    position: absolute;
+    z-index: 10;
+    transform-origin: left center;
+
+    .front,
+    .inner-left {
+        transform: rotateY(-35deg);
+    }
+}
