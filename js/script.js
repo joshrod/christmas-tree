@@ -11,6 +11,7 @@ const close = document.querySelector(".lb-close");
 const mFooter = document.querySelector(".mobile-footer");
 
 /* VARS USED IN DESKTOP EXPERIENCE */
+const desktopTag = document.querySelector(".desktop-tag");
 const gifts = document.querySelectorAll(".gift");
 
 /* CENTER OF WINDOW */
@@ -52,6 +53,24 @@ window.onload = () => {
         }
       });
   };
+
+  // Desktop Intro Animations
+  const controller = new ScrollMagic.Controller();
+
+  const tagTween = TweenMax.to(desktopTag, 1, {
+    scale: 0.2,
+    transformOrigin: "center top"
+  });
+
+  const scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger1",
+    triggerHook: "onLeave",
+    duration: "100%"
+  })
+    .setTween(tagTween)
+    .setPin(desktopTag)
+    .addTo(controller);
+
   // Hide all pictures and captions in lightbox
   for (let i = 0; i < lbImages.length; i++) {
     const image = lbImages[i];
@@ -178,6 +197,9 @@ function zoomEffect(clone) {
 }
 
 function removeClone() {
-  const clone = document.querySelector(".clone");
-  document.body.removeChild(clone);
+  const clones = document.querySelectorAll(".clone");
+  for (let i = 0; i < clones.length; i++) {
+    const clone = clones[i];
+    document.body.removeChild(clone);
+  }
 }

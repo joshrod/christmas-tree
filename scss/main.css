@@ -4,16 +4,16 @@
 /* DESKTOP MEDIA QUERY */
 /* KEYFRAMES */
 /* CLEARFIX MIXIN */
-body, .intro .tag-container, .lightbox .lb-content {
+body, .mobile-intro .tag-container, .lightbox .lb-content, .desktop-intro .desktop-tag-container {
   zoom: 1;
 }
 
-body:before, .intro .tag-container:before, .lightbox .lb-content:before, body:after, .intro .tag-container:after, .lightbox .lb-content:after {
+body:before, .mobile-intro .tag-container:before, .lightbox .lb-content:before, .desktop-intro .desktop-tag-container:before, body:after, .mobile-intro .tag-container:after, .lightbox .lb-content:after, .desktop-intro .desktop-tag-container:after {
   content: " ";
   display: table;
 }
 
-body:after, .intro .tag-container:after, .lightbox .lb-content:after {
+body:after, .mobile-intro .tag-container:after, .lightbox .lb-content:after, .desktop-intro .desktop-tag-container:after {
   clear: both;
 }
 
@@ -46,12 +46,19 @@ body {
   font-size: 1.6rem;
 }
 
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
 img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+h1,
 p {
   margin: 0;
 }
@@ -59,44 +66,62 @@ p {
 /**********************************************
  *  INTRO STYLING
  **********************************************/
-.intro {
+.mobile-intro {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
 
-.intro .tag-container {
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .mobile-intro {
+    display: none;
+  }
+}
+
+.mobile-intro .tag-container {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   position: relative;
   text-align: center;
 }
 
-.intro .tag-container .tag {
-  width: 80%;
+.mobile-intro .tag-container .tag {
+  width: auto;
+  height: 60%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   top: 0;
   z-index: 3;
-  opacity: 1;
 }
 
-.intro .tag-container .is-pressed {
-  width: 15%;
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-intro .tag-container .tag {
+    height: 70%;
+  }
+}
+
+.mobile-intro .tag-container .is-pressed {
+  height: 12%;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
 }
 
-@media only screen and (min-width: 350px) and (orientation: portrait) {
-  .intro .tag-container .is-pressed {
-    width: 22%;
+@media only screen and (min-width: 350px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-intro .tag-container .is-pressed {
+    height: 18%;
   }
 }
 
-.intro .open-button {
+@media only screen and (min-width: 620px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-intro .tag-container .is-pressed {
+    height: 15%;
+  }
+}
+
+.mobile-intro .open-button {
   width: 12rem;
   height: auto;
   position: absolute;
@@ -107,9 +132,15 @@ p {
   cursor: pointer;
 }
 
-/*
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-intro .open-button {
+    width: 20rem;
+  }
+}
+
+/**********************************************
  *  MOBILE EXPERIENCE STYLING
- */
+ **********************************************/
 .icons-container {
   overflow: hidden;
   position: absolute;
@@ -117,6 +148,12 @@ p {
   height: 0;
   bottom: 0;
   z-index: 2;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .icons-container {
+    display: none;
+  }
 }
 
 .icons-container .icons-content {
@@ -127,7 +164,6 @@ p {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  /* REMOVE WHEN DONE*/
 }
 
 .icons-container .icons-content .icons-row {
@@ -143,7 +179,7 @@ p {
           justify-content: space-between;
 }
 
-@media only screen and (min-width: 720px) and (orientation: portrait) {
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
   .icons-container .icons-content .icons-row {
     margin-top: 6rem;
   }
@@ -191,19 +227,80 @@ p {
   }
 }
 
-@media only screen and (min-width: 720px) and (orientation: portrait) {
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
   .icons-container .icons-content .icons-row .icon {
     width: 14vw;
     height: 14vw;
   }
 }
 
+/**********************************************
+ *  MOBILE FOOTER STYLING
+ **********************************************/
 .mobile-footer {
+  overflow: hidden;
   width: 100%;
-  height: 60%;
   display: none;
+  text-align: center;
+  background-image: url("../img/footer-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.mobile-footer .logo-container,
+.mobile-footer .text-container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-footer .logo-container,
+  .mobile-footer .text-container {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.mobile-footer .logo-container .logo,
+.mobile-footer .text-container .logo {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-footer .logo-container .logo,
+  .mobile-footer .text-container .logo {
+    width: 50%;
+  }
+}
+
+.mobile-footer .logo-container .holidays,
+.mobile-footer .text-container .holidays {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-footer p {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-footer p {
+    font-size: 2.6rem;
+  }
+}
+
+/**********************************************
+ *  LIGHTBOX STYLING
+ **********************************************/
 .lightbox {
   position: fixed;
   width: 100%;
@@ -301,12 +398,15 @@ p {
   color: darkred;
 }
 
-@media only screen and (min-width: 720px) and (orientation: portrait) {
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
   .lightbox .lb-content .snippet p {
     font-size: 2.4rem;
   }
 }
 
+/**********************************************
+ *  STATES FOR LIGHTBOX STYLING
+ **********************************************/
 .is-hidden {
   z-index: -3;
   opacity: 0;
@@ -321,16 +421,58 @@ p {
   transition: all 0.2s;
 }
 
-/*
+/**********************************************
+ *  DESKTOP INTRO STYLING
+ **********************************************/
+.desktop-intro {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: none;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .desktop-intro {
+    display: block;
+  }
+}
+
+.desktop-intro .desktop-tag-container {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.desktop-intro .desktop-tag-container .desktop-tag {
+  width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 0;
+  z-index: 3;
+}
+
+/**********************************************
  *  DESKTOP EXPERIENCE STYLING
- */
+ **********************************************/
 .tree-container {
   display: none;
-  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: relative;
   top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%, -50%);
-          transform: translateX(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .tree-container {
+    display: block;
+  }
 }
 
 .tree-container .gift-row {

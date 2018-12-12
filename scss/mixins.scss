@@ -9,20 +9,20 @@
 /* LANDSCAPE MEDIA QUERIES */
 @mixin landscape($pixels) {
   @media only screen and (min-width: $pixels) and (max-width: 1024px) and (orientation: landscape) {
-      @content;
+    @content;
   }
 }
 
 /* PORTRAIT MEDIA QUERIES */
 @mixin portrait($pixel) {
-  @media only screen and (min-width: $pixel) and (orientation: portrait) {
+  @media only screen and (min-width: $pixel) and (max-width: 1024px) and (orientation: portrait) {
     @content;
   }
 }
 
 /* DESKTOP MEDIA QUERY */
 @mixin desktop($size) {
-  @media only screen and (min-width: $size) {
+  @media only screen and (min-width: $size) and (orientation: landscape) {
     @content;
   }
 }
@@ -40,7 +40,8 @@
 /* CLEARFIX MIXIN */
 %clearfix {
   zoom: 1;
-  &:before, &:after {
+  &:before,
+  &:after {
     content: " ";
     display: table;
   }
