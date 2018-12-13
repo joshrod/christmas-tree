@@ -1,545 +1,716 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="scss/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scss/main.css" />
     <title>Christmas Tree</title>
-</head>
-<body>
+  </head>
+  <body>
+    <audio src="xmas-song.mp3">
+      Your browser does not support the element.
+    </audio>
     <section class="mobile-intro">
-        <div class="tag-container">
-                <img class="tag" src="img/tag.png" alt="Gift Tag">
-        </div>
-        <img class="open-button mobile-only" src="img/btn.png" alt="Open">
+      <div class="tag-container">
+        <img class="tag" src="img/tag.png" alt="Gift Tag" />
+      </div>
+      <div class="volume"><img src="img/music-icon.png" alt="Volume On" /></div>
+      <img class="open-button mobile-only" src="img/btn.png" alt="Open" />
     </section>
     <section class="icons-container">
-        <div class="icons-content">
-            <div class="icons-row">
-                <div class="icon">
-                    <img src="img/icons/1-01.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-02.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-03.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-04.svg" alt="">
-                </div>
-            </div>
-            <div class="icons-row">
-                <div class="icon">
-                    <img src="img/icons/1-05.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-06.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-07.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-08.svg" alt="">
-                </div>
-            </div>
-            <div class="icons-row">
-                <div class="icon">
-                    <img src="img/icons/1-09.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-10.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-11.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-12.svg" alt="">
-                </div>
-            </div>
-            <div class="icons-row">
-                <div class="icon">
-                    <img src="img/icons/1-13.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-14.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-15.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-16.svg" alt="">
-                </div>
-            </div>
-            <div class="icons-row">
-                <div class="icon">
-                    <img src="img/icons/1-17.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-18.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-19.svg" alt="">
-                </div>
-                <div class="icon">
-                    <img src="img/icons/1-20.svg" alt="">
-                </div>
-            </div>  
+      <div class="icons-content">
+        <div class="icons-row">
+          <div class="icon"><img src="img/icons/1-01.jpg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-02.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-03.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-04.svg" alt="" /></div>
         </div>
+        <div class="icons-row">
+          <div class="icon"><img src="img/icons/1-05.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-06.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-07.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-22.svg" alt="" /></div>
+        </div>
+        <div class="icons-row">
+          <div class="icon"><img src="img/icons/1-09.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-10.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-11.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-12.jpg" alt="" /></div>
+        </div>
+        <div class="icons-row">
+          <div class="icon"><img src="img/icons/1-13.jpg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-14.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-15.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-16.svg" alt="" /></div>
+        </div>
+        <div class="icons-row">
+          <div class="icon"><img src="img/icons/1-17.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-18.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-19.svg" alt="" /></div>
+          <div class="icon"><img src="img/icons/1-20.svg" alt="" /></div>
+        </div>
+        <div class="icons-row last-row">
+          <div class="icon"><img src="img/icons/1-26.svg" alt="" /></div>
+        </div>
+      </div>
     </section>
 
     <section class="mobile-footer">
-        <div class="logo-container">
-            <img class="logo" src="img/amg-logo.png" alt="AMG Logo">
-        </div>
-        <div class="text-container"><img src="img/holidays-text.png" alt="Happy Holidays" class="holidays"></div>
-        <div class="text-container">
-            <p>To allow our employees to enjoy the gift of families and friends this holiday season,
-            our offices will be closed from Monday, December 24th through January 1. Our office will reopen on January 2.</p>
-        </div>
+      <div class="logo-container">
+        <img class="logo" src="img/amg-logo.png" alt="AMG Logo" />
+      </div>
+      <div class="text-container">
+        <img
+          src="img/holidays-text.png"
+          alt="Happy Holidays"
+          class="holidays"
+        />
+      </div>
+      <div class="text-container">
+        <p>
+          To allow our employees to enjoy the gift of families and friends this
+          holiday season, our offices will be closed from Monday, December 24th
+          through January 1. Our office will reopen on January 2.
+        </p>
+      </div>
     </section>
 
-    <!-- -------------------------------------------
-                    LIGHTBOX FOR MOBILE
-    ----------------------------------------------- -->
+    <!--
+      -------------------------------------------
+                      LIGHTBOX FOR MOBILE
+      -----------------------------------------------
+    -->
 
     <section class="lightbox is-hidden">
-        <div class="lb-content">
-            <span class="lb-close"></span>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Alex@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Chris@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Chuck@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Dennis@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Derak@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Dirk@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Eddie@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Jacqueline@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Janet@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Jimmy@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Josh@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Ken@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Kim@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Marisa@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Mary@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Matthew@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Nick@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Orlando@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Soeurette@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
-            <div class="img-container">
-                <img class="lb-image" src="img/xmas/Tiffany@2x.jpg" alt="" >
-            </div>
-            <div class="snippet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit alias.</p>
-            </div>
+      <div class="lb-content">
+        <span class="lb-close"></span>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Alex@2x.jpg" alt="" />
         </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Chris@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Chuck@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Dennis@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Derak@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Dirk@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Eddie@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Jacqueline@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Janet@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Jimmy@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Josh@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Ken@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Kim@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Marisa@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Mary@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Matthew@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Nick@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Orlando@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Soeurette@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Tiffany@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+        <div class="img-container">
+          <img class="lb-image" src="img/xmas/Tiffany@2x.jpg" alt="" />
+        </div>
+        <div class="snippet">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            tenetur, minus, eos pariatur debitis odio ipsum mollitia impedit
+            alias.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- ----------------------------------------------
-                DESKTOP CHRISTMAS TREE
-    ------------------------------------------------ -->
+    <!--
+      ----------------------------------------------
+                  DESKTOP CHRISTMAS TREE
+      ------------------------------------------------
+    -->
 
     <section class="desktop-intro">
-        <div id="trigger1"></div>
-        <div class="desktop-tag-container">
-            <img class="desktop-tag" src="img/tag.png" alt="Gift Tag">
-        </div>
+      <div id="trigger1"></div>
+      <div class="desktop-tag-container">
+        <img class="desktop-tag" src="img/tag.png" alt="Gift Tag" />
+      </div>
+      <div class="volume"><img src="img/music-icon.png" alt="Volume On" /></div>
+      <img class="desktop-open-button" src="img/btn.png" alt="Open" />
     </section>
 
     <section class="tree-container">
+      <div class="tree-content">
         <div class="gift-row">
-            <div class="box">
-                <div class="front face">
-                    <img src="img/gifts/1-01.jpg" alt="">
-                </div>
+          <div class="box">
+            <div class="front face">
+              <img src="img/gifts/1-01.jpg" alt="" />
             </div>
+          </div>
         </div>
         <div class="gift-row">
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-02.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Alex@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-02.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Alex@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-03.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Chris@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-03.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Chris@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
+          </div>
         </div>
         <div class="gift-row">
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-04.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Chuck@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-04.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Chuck@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-05.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Dennis@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-05.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Dennis@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-06.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Derak@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-06.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Derak@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
+          </div>
         </div>
         <div class="gift-row">
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-07.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Dirk@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-07.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Dirk@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-08.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Eddie@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-08.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Eddie@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-09.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Jacqueline@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-09.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Jacqueline@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-10.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Janet@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-10.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Janet@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
+          </div>
         </div>
         <div class="gift-row">
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-11.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Jimmy@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-11.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Jimmy@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-12.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Josh@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-12.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Josh@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-13.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Ken@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-13.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Ken@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-14.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Kim@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-14.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Kim@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-15.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Marisa@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-15.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Marisa@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
+          </div>
         </div>
         <div class="gift-row">
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-16.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Mary@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-16.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Mary@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-17.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Matthew@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-17.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Matthew@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-18.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Nick@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-18.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Nick@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-19.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Orlando@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-19.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Orlando@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-20.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Soeurette@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-20.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Soeurette@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="gift">
-                <div class="card">
-                    <div class="front face">
-                        <img src="img/gifts/1-21.jpg" alt="">
-                    </div>
-                    <div class="inner-left face">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae quos et doloribus fugit earum.</p>
-                    </div>
-                    <div class="inner-right face">
-                        <img src="img/xmas/Tiffany@2x.jpg" alt="Gift Wrap">
-                    </div>
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-21.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Tiffany@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
+          </div>
         </div>
         <div class="gift-row">
-            <div class="box">
-                <div class="front face">
-                    <img src="img/gifts/1-22.jpg" alt="">
-                </div>
+          <div class="box">
+            <div class="front face">
+              <img src="img/gifts/1-22.jpg" alt="" />
             </div>
-            <div class="box">
-                <div class="front face">
-                    <img src="img/gifts/1-23.jpg" alt="">
-                </div>
+          </div>
+          <div class="gift">
+            <div class="card">
+              <div class="front face">
+                <img src="img/gifts/1-26.jpg" alt="" />
+              </div>
+              <div class="inner-left face">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero, vitae quos et doloribus fugit earum.
+                </p>
+              </div>
+              <div class="inner-right face">
+                <img src="img/xmas/Soeurette@2x.jpg" alt="Gift Wrap" />
+              </div>
             </div>
-            <div class="box">
-                <div class="front face">
-                    <img src="img/gifts/1-24.jpg" alt="">
-                </div>
+          </div>
+          <div class="box">
+            <div class="front face">
+              <img src="img/gifts/1-24.jpg" alt="" />
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
+    <section class="desktop-footer">
+      <div class="desktop-logo-container">
+        <img class="desktop-logo" src="img/amg-logo.png" alt="AMG Logo" />
+      </div>
+      <div class="desktop-text-container">
+        <img
+          src="img/holidays-text.png"
+          alt="Happy Holidays"
+          class="desktop-holidays"
+        />
+      </div>
+      <div class="desktop-text-container">
+        <p>
+          To allow our employees to enjoy the gift of families and friends this
+          holiday season, our offices will be closed from Monday, December 24th
+          through January 1. Our office will reopen on January 2.
+        </p>
+      </div>
+    </section>
+    <!--
+      <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
+    -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="js/script.js"></script>
+  </body>
 </html>

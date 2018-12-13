@@ -12,20 +12,50 @@ const mFooter = document.querySelector(".mobile-footer");
 
 /* VARS USED IN DESKTOP EXPERIENCE */
 const desktopTag = document.querySelector(".desktop-tag");
+const buttonDesktop = document.querySelector(".desktop-open-button");
 const gifts = document.querySelectorAll(".gift");
+const desktopFooter = document.querySelector(".desktop-footer");
+
+const song = document.querySelector("audio");
 
 /* CENTER OF WINDOW */
 let xCenter = window.innerWidth / 2;
-let yCenter = window.innerHeight / 2;
+let yCenter = window.pageYOffset + window.innerHeight / 2;
 
 let lbOpen = false;
 let current = null;
 
 let isAnimating = false;
 
+let screenSize = window.innerWidth;
+let smallScreen = screenSize < 1025 ? true : false;
+
+// Refresh page if window resize reaches below 1025px and handle visible mobile footer
+window.onresize = () => {
+  xCenter = window.innerWidth / 2;
+  yCenter = window.innerHeight / 2;
+
+  if (
+    (!smallScreen && window.innerWidth < 1025) ||
+    (smallScreen && window.innerWidth > 1024)
+  ) {
+    // if (mFooter.style.display === "block") {
+    //   mFooter.style.display = "none";
+    // }
+    location.reload(true);
+  }
+};
+
+// Update the window's center as you scroll
+window.onscroll = () => {
+  // yCenter = window.pageYOffset + window.innerHeight / 2;
+};
+
 window.onload = () => {
-  // Intro animations
-  let introTl = new TimelineMax();
+  // Mobile Intro animations
+  // TODO: Combine these two intro animations into one univerasal
+
+  const introTl = new TimelineMax();
 
   introTl
     .from(tag, 1, { yPercent: -100, ease: Power4.easeOut })
@@ -34,42 +64,77 @@ window.onload = () => {
   openButton.onclick = () => {
     const iconTl = new TimelineMax();
     iconTl
-      .addLabel("prepareIcon")
-      .to(
-        openButton,
-        0.3,
-        {
-          opacity: 0,
-          onComplete: function() {
-            tag.classList.add("is-pressed");
-          }
-        },
-        "prepareIcon"
-      )
+      .to(openButton, 0.3, {
+        opacity: 0,
+        onComplete: function() {
+          tag.classList.add("is-pressed");
+        }
+      })
       .to(".icons-container", 0.8, {
-        height: "100%",
+        bottom: 0,
+        display: "block",
         onComplete: function() {
           mFooter.style.display = "block";
         }
       });
   };
 
-  // Desktop Intro Animations
-  const controller = new ScrollMagic.Controller();
+  let desktopIntro = new TimelineMax();
 
-  const tagTween = TweenMax.to(desktopTag, 1, {
-    scale: 0.2,
-    transformOrigin: "center top"
-  });
+  desktopIntro
+    .from(desktopTag, 1, { yPercent: -100, ease: Power4.easeOut })
+    .from(buttonDesktop, 0.3, {
+      opacity: 0,
+      onComplete: function() {
+        desktopTag.classList.add("is-pressed");
+      }
+    });
 
-  const scene = new ScrollMagic.Scene({
-    triggerElement: "#trigger1",
-    triggerHook: "onLeave",
-    duration: "100%"
-  })
-    .setTween(tagTween)
-    .setPin(desktopTag)
-    .addTo(controller);
+  buttonDesktop.onclick = () => {
+    const treeTl = new TimelineMax();
+    treeTl
+      .to(buttonDesktop, 0.3, {
+        opacity: 0
+      })
+      .to(
+        desktopTag,
+        0.8,
+        {
+          height: 0
+        },
+        "desktopPrep"
+      )
+      .to(
+        ".tree-container",
+        0.8,
+        {
+          bottom: 0,
+          display: "block",
+          onStart: randomScale,
+          onComplete: function() {
+            desktopFooter.style.display = "block";
+          }
+        },
+        "desktopPrep"
+      );
+  };
+
+  // // Desktop Intro Animations
+  // const controller = new ScrollMagic.Controller();
+
+  // const tagTween = TweenMax.to(desktopTag, 0.5, {
+  //   scale: 0.2,
+  //   transformOrigin: "center top"
+  // });
+
+  // const scene = new ScrollMagic.Scene({
+  //   triggerElement: "#trigger1",
+  //   triggerHook: "onLeave",
+  //   duration: "100%"
+  // })
+  //   .setTween(tagTween)
+  //   // .setPin(desktopTag)
+  //   .addTo(controller);
 
   // Hide all pictures and captions in lightbox
   for (let i = 0; i < lbImages.length; i++) {
@@ -146,6 +211,26 @@ function closeLightbox() {
   lbOpen = false;
 }
 
+function randomScale() {
+  const randomArray = [gifts.length];
+  for (let i = 0; i < gifts.length; i++) {
+    randomArray[i] = Math.floor(Math.random() * gifts.length);
+    for (let j = 0; j < i; j++) {
+      if (randomArray[i] === randomArray[j]) {
+        i--;
+        break;
+      }
+    }
+  }
+
+  const scaleTl = new TimelineMax();
+
+  for (let k = 0; k < randomArray.length; k++) {
+    const randomNum = randomArray[k];
+    scaleTl.from(gifts[randomNum], 0.15, { scale: 0 });
+  }
+}
+
 function cloneOnTop(el) {
   const box = el.getBoundingClientRect();
   const clone = el.cloneNode(true);
@@ -161,7 +246,7 @@ function zoomEffect(clone) {
   const tl = new TimelineMax({
     paused: true,
     reversed: true,
-    onReverseComplete: removeClone
+    onReverseComplete: removeClones
   });
   const x = clone.offsetLeft;
   const y = clone.offsetTop;
@@ -196,7 +281,7 @@ function zoomEffect(clone) {
   };
 }
 
-function removeClone() {
+function removeClones() {
   const clones = document.querySelectorAll(".clone");
   for (let i = 0; i < clones.length; i++) {
     const clone = clones[i];
