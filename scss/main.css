@@ -79,6 +79,28 @@ p {
   }
 }
 
+.mobile-intro .intro-volume {
+  width: 10%;
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .intro-volume {
+    width: 3rem;
+    bottom: 25%;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .intro-volume {
+    width: 4rem;
+  }
+}
+
 .mobile-intro .tag-container {
   width: 100%;
   height: 100%;
@@ -126,6 +148,18 @@ p {
   }
 }
 
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .open-button {
+    width: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .open-button {
+    width: 15rem;
+  }
+}
+
 /**********************************************
  *  MOBILE EXPERIENCE STYLING
  **********************************************/
@@ -146,6 +180,26 @@ p {
 @media only screen and (min-width: 1025px) and (orientation: landscape) {
   .icons-container {
     display: none;
+  }
+}
+
+.icons-container .content-speaker {
+  width: 10%;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .content-speaker {
+    width: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .content-speaker {
+    width: 4rem;
   }
 }
 
@@ -184,7 +238,7 @@ p {
 
 @media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
   .icons-container .icons-content .icons-row {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
 }
 
@@ -196,7 +250,7 @@ p {
 
 @media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
   .icons-container .icons-content .icons-row {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }
 
@@ -212,15 +266,15 @@ p {
 
 @media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
   .icons-container .icons-content .icons-row .icon {
-    width: 15vh;
-    height: 15vh;
+    width: 13vh;
+    height: 13vh;
   }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
   .icons-container .icons-content .icons-row .icon {
-    width: 13vh;
-    height: 13vh;
+    width: 11vh;
+    height: 11vh;
   }
 }
 
@@ -273,6 +327,14 @@ p {
   }
 }
 
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer .logo-container,
+  .mobile-footer .text-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
 .mobile-footer .logo-container .logo,
 .mobile-footer .text-container .logo {
   width: 70%;
@@ -287,11 +349,25 @@ p {
   }
 }
 
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer .logo-container .logo,
+  .mobile-footer .text-container .logo {
+    width: 20rem;
+  }
+}
+
 .mobile-footer .logo-container .holidays,
 .mobile-footer .text-container .holidays {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer .logo-container .holidays,
+  .mobile-footer .text-container .holidays {
+    width: 30rem;
+  }
 }
 
 .mobile-footer p {
@@ -304,6 +380,12 @@ p {
 @media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
   .mobile-footer p {
     font-size: 2.6rem;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer p {
+    width: 45rem;
   }
 }
 
@@ -414,6 +496,12 @@ p {
   }
 }
 
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .lightbox .lb-content .snippet p {
+    font-size: 2.8rem;
+  }
+}
+
 /**********************************************
  *  STATES FOR LIGHTBOX STYLING
  **********************************************/
@@ -469,8 +557,15 @@ p {
   z-index: 3;
 }
 
-.desktop-intro .volume {
-  width: 2rem;
+.desktop-intro .intro-volume {
+  width: 3%;
+  position: absolute;
+  bottom: 21%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 1;
+  cursor: pointer;
 }
 
 .desktop-intro .desktop-open-button {
@@ -493,10 +588,20 @@ p {
   width: 100%;
   height: 100%;
   bottom: -100%;
+  overflow: hidden;
   position: absolute;
   background-image: url("../img/snow-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.tree-container .content-speaker {
+  width: 3%;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  cursor: pointer;
+  z-index: 3;
 }
 
 .tree-container .tree-content {
@@ -577,15 +682,19 @@ p {
 }
 
 .inner-left {
-  background: #e7e7e7;
+  background: #202945;
   z-index: 2;
 }
 
 .inner-left > p {
+  position: relative;
+  top: 50%;
+  padding: 5px;
   opacity: 0;
-  font-size: 6px;
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  font-size: 4px;
+  color: white;
+  -webkit-transform: translateY(-50%) rotateY(-180deg);
+          transform: translateY(-50%) rotateY(-180deg);
   text-align: center;
 }
 
@@ -597,7 +706,7 @@ p {
 
 .clone {
   position: fixed;
-  z-index: 10;
+  z-index: 7;
   -webkit-transform-origin: left center;
           transform-origin: left center;
 }
@@ -606,6 +715,16 @@ p {
 .clone .inner-left {
   -webkit-transform: rotateY(-35deg);
           transform: rotateY(-35deg);
+}
+
+.invisible {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  display: none;
 }
 
 /**********************************************

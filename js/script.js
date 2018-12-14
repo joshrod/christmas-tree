@@ -14,9 +14,13 @@ const mFooter = document.querySelector(".mobile-footer");
 const desktopTag = document.querySelector(".desktop-tag");
 const buttonDesktop = document.querySelector(".desktop-open-button");
 const gifts = document.querySelectorAll(".gift");
+const overlay = document.querySelector(".invisible");
 const desktopFooter = document.querySelector(".desktop-footer");
 
-const song = document.querySelector("audio");
+/* AUDIO HANDLING */
+const introSpeakers = document.querySelectorAll(".intro-volume");
+const contentSpeakers = document.querySelectorAll(".content-speaker");
+const song = document.querySelector(".song");
 
 /* CENTER OF WINDOW */
 let xCenter = window.innerWidth / 2;
@@ -26,6 +30,7 @@ let lbOpen = false;
 let current = null;
 
 let isAnimating = false;
+let isPlaying = false;
 
 let screenSize = window.innerWidth;
 let smallScreen = screenSize < 1025 ? true : false;
@@ -39,9 +44,6 @@ window.onresize = () => {
     (!smallScreen && window.innerWidth < 1025) ||
     (smallScreen && window.innerWidth > 1024)
   ) {
-    // if (mFooter.style.display === "block") {
-    //   mFooter.style.display = "none";
-    // }
     location.reload(true);
   }
 };
@@ -53,23 +55,31 @@ window.onscroll = () => {
 
 window.onload = () => {
   // Mobile Intro animations
-  // TODO: Combine these two intro animations into one univerasal
+  // TODO: Combine these two intro animations into one universal
 
   const introTl = new TimelineMax();
 
   introTl
     .from(tag, 1, { yPercent: -100, ease: Power4.easeOut })
-    .from(openButton, 0.4, { opacity: 0 });
+    .from(openButton, 0.4, { opacity: 0 })
+    .from(introSpeakers[0], 0.4, { opacity: 0 });
 
   openButton.onclick = () => {
     const iconTl = new TimelineMax();
     iconTl
-      .to(openButton, 0.3, {
-        opacity: 0,
-        onComplete: function() {
-          tag.classList.add("is-pressed");
-        }
-      })
+      .addLabel("clearIcons")
+      .to(
+        openButton,
+        0.3,
+        {
+          opacity: 0,
+          onComplete: function() {
+            tag.classList.add("is-pressed");
+          }
+        },
+        "clearIcons"
+      )
+      .to(introSpeakers[0], 0.3, { opacity: 0 }, "clearIcons")
       .to(".icons-container", 0.8, {
         bottom: 0,
         display: "block",
@@ -84,18 +94,23 @@ window.onload = () => {
   desktopIntro
     .from(desktopTag, 1, { yPercent: -100, ease: Power4.easeOut })
     .from(buttonDesktop, 0.3, {
-      opacity: 0,
-      onComplete: function() {
-        desktopTag.classList.add("is-pressed");
-      }
-    });
+      opacity: 0
+    })
+    .from(introSpeakers[1], 0.4, { opacity: 0 });
 
   buttonDesktop.onclick = () => {
     const treeTl = new TimelineMax();
     treeTl
-      .to(buttonDesktop, 0.3, {
-        opacity: 0
-      })
+      .addLabel("clearIcons")
+      .to(
+        buttonDesktop,
+        0.3,
+        {
+          opacity: 0
+        },
+        "clearIcons"
+      )
+      .to(introSpeakers[1], 0.3, { opacity: 0 }, "clearIcons")
       .to(
         desktopTag,
         0.8,
@@ -118,6 +133,39 @@ window.onload = () => {
         "desktopPrep"
       );
   };
+
+  // Play music and change icon when speaker div is clicked
+  for (let i = 0; i < introSpeakers.length; i++) {
+    const speaker = introSpeakers[i];
+    speaker.onclick = () => {
+      if (isPlaying) {
+        song.pause();
+        speaker.children[0].src = "img/volume-on.svg";
+        isPlaying = false;
+        updateSpeakers();
+        return;
+      }
+      song.play();
+      speaker.children[0].src = "img/volume-off.svg";
+      isPlaying = true;
+      updateSpeakers();
+    };
+  }
+
+  for (let i = 0; i < contentSpeakers.length; i++) {
+    const speaker = contentSpeakers[i];
+    speaker.onclick = () => {
+      if (isPlaying) {
+        song.pause();
+        isPlaying = false;
+        updateSpeakers();
+        return;
+      }
+      song.play();
+      isPlaying = true;
+      updateSpeakers();
+    };
+  }
 
   // // Desktop Intro Animations
   // const controller = new ScrollMagic.Controller();
@@ -165,6 +213,20 @@ window.onload = () => {
     };
   }
 };
+
+function updateSpeakers() {
+  if (isPlaying) {
+    for (let i = 0; i < contentSpeakers.length; i++) {
+      const speaker = contentSpeakers[i];
+      speaker.children[0].src = "img/volume-off.svg";
+    }
+    return;
+  }
+  for (let i = 0; i < contentSpeakers.length; i++) {
+    const speaker = contentSpeakers[i];
+    speaker.children[0].src = "img/volume-on.svg";
+  }
+}
 
 function openLightbox(index) {
   if (lbOpen) {
@@ -243,6 +305,7 @@ function cloneOnTop(el) {
 }
 
 function zoomEffect(clone) {
+  overlay.style.display = "block";
   const tl = new TimelineMax({
     paused: true,
     reversed: true,
@@ -282,6 +345,7 @@ function zoomEffect(clone) {
 }
 
 function removeClones() {
+  overlay.style.display = "none";
   const clones = document.querySelectorAll(".clone");
   for (let i = 0; i < clones.length; i++) {
     const clone = clones[i];
