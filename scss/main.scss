@@ -20,6 +20,12 @@ body {
   font-size: 62.5%;
 }
 
+html {
+  @include desktop(1025px) {
+    overflow-y: scroll;
+  }
+}
+
 body {
   @extend %clearfix;
   position: relative;
@@ -40,6 +46,50 @@ h1,
 p {
   font-family: "Montserrat", sans-serif;
   margin: 0;
+}
+
+/**********************************************
+ *  LOADER STYLING
+ **********************************************/
+
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  background: #fff;
+
+  .spinner {
+    border: 5px solid #a9a427;
+    border-radius: 6rem;
+    height: 6rem;
+    left: 50%;
+    margin: -3rem 0 0 -3rem;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    width: 6rem;
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite;
+  }
+}
+
+@include keyframes(pulsate) {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }
 
 /**********************************************
@@ -64,6 +114,10 @@ p {
     left: 50%;
     bottom: 25%;
     transform: translateX(-50%);
+    @include portrait(720px) {
+      width: 5%;
+      bottom: 22%;
+    }
     @include landscape(460px) {
       width: 3rem;
       bottom: 25%;
@@ -144,6 +198,10 @@ p {
     bottom: 2rem;
     right: 2rem;
     cursor: pointer;
+    z-index: 3;
+    @include portrait(720px) {
+      width: 8%;
+    }
     @include landscape(460px) {
       width: 3rem;
     }
@@ -401,6 +459,7 @@ p {
   background-image: url("../img/intro-bg.png");
   background-position: center bottom;
   background-repeat: no-repeat;
+  background-size: cover;
   @include desktop(1025px) {
     display: block;
   }
@@ -424,6 +483,7 @@ p {
 
   .intro-volume {
     width: 3%;
+    max-width: 5rem;
     position: absolute;
     bottom: 21%;
     left: 50%;
@@ -559,6 +619,37 @@ p {
   z-index: 7;
   transform-origin: left center;
 
+  .exit {
+    width: 0.9rem;
+    height: 0.9rem;
+    padding: 0.3rem;
+    position: absolute;
+    border-radius: 0.9rem;
+    top: -0.5rem;
+    right: -0.5rem;
+    z-index: 2;
+    opacity: 1;
+    text-align: center;
+    background: #aba400;
+    cursor: pointer;
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0.2rem;
+      left: 0.4rem;
+      content: " ";
+      height: 0.5rem;
+      width: 0.1rem;
+      background-color: white;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
   .front,
   .inner-left {
     transform: rotateY(-35deg);
@@ -605,6 +696,7 @@ p {
 
     .desktop-logo {
       width: 20%;
+      max-width: 26rem;
       margin-left: auto;
       margin-right: auto;
       @include portrait(720px) {
@@ -614,6 +706,7 @@ p {
 
     .desktop-holidays {
       width: 30%;
+      max-width: 35rem;
       margin-left: auto;
       margin-right: auto;
     }
