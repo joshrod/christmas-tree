@@ -435,6 +435,7 @@ var buttonDesktop = document.querySelector(".desktop-open-button");
 var gifts = document.querySelectorAll(".gift");
 var overlay = document.querySelector(".invisible");
 var desktopFooter = document.querySelector(".desktop-footer");
+var boxes = document.querySelectorAll(".gift, .box");
 
 /* AUDIO HANDLING */
 var introSpeakers = document.querySelectorAll(".intro-volume");
@@ -468,6 +469,10 @@ window.onresize = function() {
 };
 
 window.onload = function() {
+  // Play music as it finishes to load
+  song.play();
+  isPlaying = true;
+
   // Remove loader when page is loaded
   TweenMax.to(loader, 0.7, {
     opacity: 0,
@@ -562,13 +567,13 @@ window.onload = function() {
     speaker.onclick = function() {
       if (isPlaying) {
         song.pause();
-        speaker.children[0].src = "img/volume-on.svg";
+        speaker.children[0].src = "img/volume-off.svg";
         isPlaying = false;
         updateSpeakers();
         return;
       }
       song.play();
-      speaker.children[0].src = "img/volume-off.svg";
+      speaker.children[0].src = "img/volume-on.svg";
       isPlaying = true;
       updateSpeakers();
     };
@@ -655,13 +660,13 @@ function updateSpeakers() {
   if (isPlaying) {
     for (var i = 0; i < contentSpeakers.length; i++) {
       var _speaker2 = contentSpeakers[i];
-      _speaker2.children[0].src = "img/volume-off.svg";
+      _speaker2.children[0].src = "img/volume-on.svg";
     }
     return;
   }
   for (var _i4 = 0; _i4 < contentSpeakers.length; _i4++) {
     var _speaker3 = contentSpeakers[_i4];
-    _speaker3.children[0].src = "img/volume-on.svg";
+    _speaker3.children[0].src = "img/volume-off.svg";
   }
 }
 
@@ -711,9 +716,9 @@ function closeLightbox() {
 }
 
 function randomScale() {
-  var randomArray = [gifts.length];
-  for (var i = 0; i < gifts.length; i++) {
-    randomArray[i] = Math.floor(Math.random() * gifts.length);
+  var randomArray = [boxes.length];
+  for (var i = 0; i < boxes.length; i++) {
+    randomArray[i] = Math.floor(Math.random() * boxes.length);
     for (var j = 0; j < i; j++) {
       if (randomArray[i] === randomArray[j]) {
         i--;
@@ -726,15 +731,15 @@ function randomScale() {
 
   for (var k = 0; k < randomArray.length; k++) {
     var randomNum = randomArray[k];
-    scaleTl.from(gifts[randomNum], 0.15, { scale: 0 });
+    scaleTl.from(boxes[randomNum], 0.15, { scale: 0 });
   }
 }
 
 function cloneOnTop(el) {
   var box = el.getBoundingClientRect();
   var clone = el.cloneNode(true);
-  clone.style.width = box.width + "px";
-  clone.style.height = box.height + "px";
+  // clone.style.width = box.width + "px";
+  // clone.style.height = box.height + "px";
   clone.style.top = box.top + "px";
   clone.style.left = box.left + "px";
   clone.classList.add("clone");
@@ -743,6 +748,7 @@ function cloneOnTop(el) {
 
 function zoomEffect(clone) {
   overlay.style.display = "block";
+  TweenMax.set(clone, { scale: 90 / clone.offsetWidth });
   addCloseButton(clone);
   var tl = new TimelineMax({
     paused: true,
@@ -762,12 +768,13 @@ function zoomEffect(clone) {
       {
         x: xCenter - x,
         y: yCenter - cy,
-        scale: ratio,
-        ease: Power4.easeOut
+        ease: Power4.easeOut,
+        scale: 1,
+        zIndex: 7
       },
       "openCard"
     )
-    .to([faces[0], faces[1]], 0.2, { rotationY: -165 }, "openCard")
+    .to([faces[0], faces[1]], 0.2, { rotationY: -179 }, "openCard")
     .addLabel("finishingTouches")
     .to(text, 0.3, { opacity: 1 }, "finishingTouches")
     .from(
@@ -818,7 +825,7 @@ function zoomBack(clone, xPos, yPos, facesArray) {
       {
         x: xMove,
         y: yMove,
-        scale: 1,
+        scale: 90 / clone.offsetWidth,
         ease: Power4.easeOut,
         onComplete: function onComplete() {
           removeClones();

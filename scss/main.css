@@ -24,7 +24,7 @@ body:after, .mobile-intro .tag-container:after, .lightbox .lb-content:after, .de
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -92,15 +92,15 @@ p {
   top: 50%;
   width: 6rem;
   -webkit-animation: pulsate 1s ease-out;
-          animation: pulsate 1s ease-out;
+  animation: pulsate 1s ease-out;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes pulsate {
   0% {
     -webkit-transform: scale(0.1);
-            transform: scale(0.1);
+    transform: scale(0.1);
     opacity: 0;
   }
   50% {
@@ -108,7 +108,7 @@ p {
   }
   100% {
     -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 0;
   }
 }
@@ -116,7 +116,7 @@ p {
 @keyframes pulsate {
   0% {
     -webkit-transform: scale(0.1);
-            transform: scale(0.1);
+    transform: scale(0.1);
     opacity: 0;
   }
   50% {
@@ -124,7 +124,7 @@ p {
   }
   100% {
     -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
     opacity: 0;
   }
 }
@@ -154,7 +154,7 @@ p {
   left: 50%;
   bottom: 25%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 @media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
@@ -214,7 +214,7 @@ p {
   bottom: 12%;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   cursor: pointer;
 }
 
@@ -293,7 +293,7 @@ p {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .icons-container .icons-content .icons-row {
@@ -305,8 +305,8 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .icons-container .icons-content .icons-row:first-of-type {
@@ -370,8 +370,8 @@ p {
 
 .icons-container .icons-content .last-row {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 /**********************************************
@@ -455,6 +455,7 @@ p {
 
 .mobile-footer p {
   width: 80%;
+  max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
   color: white;
@@ -492,7 +493,7 @@ p {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 @media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
@@ -528,12 +529,12 @@ p {
 
 .lightbox .lb-content .lb-close:before {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .lightbox .lb-content .lb-close:after {
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .lightbox .lb-content .img-container {
@@ -562,7 +563,7 @@ p {
     top: 50%;
     left: 0;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 }
 
@@ -648,7 +649,7 @@ p {
   bottom: 21%;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   opacity: 1;
   cursor: pointer;
 }
@@ -661,7 +662,7 @@ p {
   left: 50%;
   opacity: 1;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   cursor: pointer;
 }
 
@@ -681,11 +682,13 @@ p {
 }
 
 .tree-container .content-speaker {
-  width: 3%;
+  width: 3rem;
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
+  top: 4.5rem;
+  right: 3rem;
   cursor: pointer;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 3;
 }
 
@@ -695,7 +698,7 @@ p {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .tree-container .tree-content .gift-row {
@@ -703,10 +706,10 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
 }
 
 .tree-container .tree-content .gift-row .gift,
@@ -725,7 +728,7 @@ p {
 .tree-container .tree-content .gift-row .box .card:hover .front,
 .tree-container .tree-content .gift-row .box .card:hover .inner-left {
   -webkit-transform: rotateY(-35deg);
-          transform: rotateY(-35deg);
+  transform: rotateY(-35deg);
 }
 
 .gift,
@@ -741,8 +744,8 @@ p {
   width: 100%;
   height: 100%;
   position: relative;
-  -webkit-perspective: 700;
-          perspective: 700;
+  -webkit-perspective: 200rem;
+          perspective: 200rem;
   cursor: pointer;
 }
 
@@ -753,16 +756,16 @@ p {
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: visible;
-          backface-visibility: visible;
+  backface-visibility: visible;
   -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+  transform-origin: 0 0;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
 .front {
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   z-index: 3;
 }
 
@@ -778,32 +781,34 @@ p {
   opacity: 0;
   font-size: 4px;
   color: white;
-  -webkit-transform: translateY(-50%) rotateY(-180deg);
-          transform: translateY(-50%) rotateY(-180deg);
+  -webkit-transform: translateZ(1000px) translateY(-50%) rotateY(-180deg);
+  transform: translateZ(1000px) translateY(-50%) rotateY(-180deg);
   text-align: center;
 }
 
 .inner-right {
   -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
+  transform: rotateY(0deg);
   z-index: 1;
 }
 
 .clone {
+  width: 32.5vw;
+  height: 32.5vw;
   position: fixed;
   z-index: 7;
-  -webkit-transform-origin: left center;
-          transform-origin: left center;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
 }
 
 .clone .exit {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 3.5rem;
+  height: 3.5rem;
   padding: 0.3rem;
   position: absolute;
-  border-radius: 0.9rem;
-  top: -0.5rem;
-  right: -0.5rem;
+  border-radius: 5rem;
+  top: -1.5rem;
+  right: -1.5rem;
   z-index: 2;
   opacity: 1;
   text-align: center;
@@ -813,28 +818,40 @@ p {
 
 .clone .exit:before, .clone .exit:after {
   position: absolute;
-  top: 0.2rem;
-  left: 0.4rem;
+  top: 0.9rem;
+  left: 1.6rem;
   content: " ";
-  height: 0.5rem;
-  width: 0.1rem;
+  height: 1.8rem;
+  width: 0.3rem;
   background-color: white;
 }
 
 .clone .exit:before {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .clone .exit:after {
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .clone .front,
 .clone .inner-left {
   -webkit-transform: rotateY(-35deg);
-          transform: rotateY(-35deg);
+  transform: rotateY(-35deg);
+}
+
+.clone .inner-left > p {
+  padding: 3rem;
+  font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 1560px) and (orientation: landscape) {
+  .clone .inner-left > p {
+    padding: 4rem;
+    font-size: 2.4rem;
+  }
 }
 
 .invisible {

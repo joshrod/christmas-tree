@@ -8,6 +8,7 @@
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -73,13 +74,16 @@ p {
     position: absolute;
     top: 50%;
     width: 6rem;
+    -webkit-animation: pulsate 1s ease-out;
     animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
 }
 
 @include keyframes(pulsate) {
   0% {
+    -webkit-transform: scale(0.1);
     transform: scale(0.1);
     opacity: 0;
   }
@@ -87,6 +91,7 @@ p {
     opacity: 1;
   }
   100% {
+    -webkit-transform: scale(1.2);
     transform: scale(1.2);
     opacity: 0;
   }
@@ -113,6 +118,7 @@ p {
     position: absolute;
     left: 50%;
     bottom: 25%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     @include portrait(720px) {
       width: 5%;
@@ -148,6 +154,7 @@ p {
     }
     .is-pressed {
       height: 0;
+      -webkit-transition: all 0.8s;
       transition: all 0.8s;
     }
   }
@@ -158,6 +165,7 @@ p {
     position: absolute;
     bottom: 12%;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     cursor: pointer;
     @include portrait(720px) {
@@ -216,6 +224,7 @@ p {
     position: relative;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
     .icons-row {
@@ -223,7 +232,11 @@ p {
       margin-top: 2rem;
       padding-left: 4%;
       padding-right: 4%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between;
       &:first-of-type {
         margin-top: 0;
@@ -247,6 +260,7 @@ p {
         cursor: pointer;
         border-radius: 1rem;
         overflow: hidden;
+        -webkit-transition: width 0.7s, height 0.7s;
         transition: width 0.7s, height 0.7s;
         @include landscape(400px) {
           width: 13vh;
@@ -264,6 +278,8 @@ p {
     }
 
     .last-row {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
     }
   }
@@ -325,6 +341,7 @@ p {
 
   p {
     width: 80%;
+    max-width: 60rem;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -348,6 +365,7 @@ p {
   top: 0;
   left: 0;
   background-color: rgba(32, 41, 69, 0.95);
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 
   .lb-content {
@@ -356,6 +374,7 @@ p {
     position: relative;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     @include landscape(400px) {
       width: 90%;
@@ -385,9 +404,11 @@ p {
         background-color: white;
       }
       &:before {
+        -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
       }
       &:after {
+        -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
     }
@@ -411,6 +432,7 @@ p {
         position: absolute;
         top: 50%;
         left: 0;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
       }
 
@@ -444,6 +466,7 @@ p {
   opacity: 1;
   z-index: 4;
   visibility: visible;
+  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
@@ -487,6 +510,7 @@ p {
     position: absolute;
     bottom: 21%;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     opacity: 1;
     cursor: pointer;
@@ -499,6 +523,7 @@ p {
     bottom: 12%;
     left: 50%;
     opacity: 1;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     cursor: pointer;
   }
@@ -520,11 +545,12 @@ p {
   background-repeat: no-repeat;
 
   .content-speaker {
-    width: 3%;
+    width: 3rem;
     position: absolute;
-    bottom: 2rem;
-    left: 2rem;
+    top: 4.5rem;
+    right: 3rem;
     cursor: pointer;
+    transform: translateX(-50%);
     z-index: 3;
   }
 
@@ -533,11 +559,17 @@ p {
     position: relative;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
     .gift-row {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -ms-flex-line-pack: center;
       align-content: center;
 
       .gift,
@@ -547,11 +579,13 @@ p {
         .card {
           &:hover {
             .face {
+              -webkit-transition: all 0.3s ease-out;
               transition: all 0.3s ease-out;
             }
 
             .front,
             .inner-left {
+              -webkit-transform: rotateY(-35deg);
               transform: rotateY(-35deg);
             }
           }
@@ -574,7 +608,7 @@ p {
   width: 100%;
   height: 100%;
   position: relative;
-  perspective: 700;
+  perspective: 200rem;
   cursor: pointer;
 }
 
@@ -584,12 +618,16 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-backface-visibility: visible;
   backface-visibility: visible;
+  -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
+  -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
 
 .front {
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 3;
 }
@@ -604,29 +642,34 @@ p {
     opacity: 0;
     font-size: 4px;
     color: white;
-    transform: translateY(-50%) rotateY(-180deg);
+    -webkit-transform: translateZ(1000px) translateY(-50%) rotateY(-180deg);
+    transform: translateZ(1000px) translateY(-50%) rotateY(-180deg);
     text-align: center;
   }
 }
 
 .inner-right {
+  -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
   z-index: 1;
 }
 
 .clone {
+  width: 32.5vw;
+  height: 32.5vw;
   position: fixed;
   z-index: 7;
-  transform-origin: left center;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
 
   .exit {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 3.5rem;
+    height: 3.5rem;
     padding: 0.3rem;
     position: absolute;
-    border-radius: 0.9rem;
-    top: -0.5rem;
-    right: -0.5rem;
+    border-radius: 5rem;
+    top: -1.5rem;
+    right: -1.5rem;
     z-index: 2;
     opacity: 1;
     text-align: center;
@@ -635,24 +678,38 @@ p {
     &:before,
     &:after {
       position: absolute;
-      top: 0.2rem;
-      left: 0.4rem;
+      top: 0.9rem;
+      left: 1.6rem;
       content: " ";
-      height: 0.5rem;
-      width: 0.1rem;
+      height: 1.8rem;
+      width: 0.3rem;
       background-color: white;
     }
     &:before {
+      -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
     }
     &:after {
+      -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
   }
 
   .front,
   .inner-left {
+    -webkit-transform: rotateY(-35deg);
     transform: rotateY(-35deg);
+  }
+
+  .inner-left {
+    & > p {
+      padding: 3rem;
+      font-size: 1.8rem;
+      @include desktop(1560px) {
+        padding: 4rem;
+        font-size: 2.4rem;
+      }
+    }
   }
 }
 
