@@ -428,6 +428,8 @@ var lbImages = document.querySelectorAll(".img-container");
 var snippets = document.querySelectorAll(".snippet");
 var close = document.querySelector(".lb-close");
 var mFooter = document.querySelector(".mobile-footer");
+var snowContainer = document.querySelector(".snow-container");
+var iconsContainer = document.querySelector(".icons-container");
 
 /* VARS USED IN DESKTOP EXPERIENCE */
 var desktopTag = document.querySelector(".desktop-tag");
@@ -436,9 +438,10 @@ var gifts = document.querySelectorAll(".gift");
 var overlay = document.querySelector(".invisible");
 var desktopFooter = document.querySelector(".desktop-footer");
 var boxes = document.querySelectorAll(".gift, .box");
+var treeContainer = document.querySelector(".tree-container");
 
 /* AUDIO HANDLING */
-var introSpeakers = document.querySelectorAll(".intro-volume");
+//var introSpeakers = document.querySelectorAll(".intro-volume");
 var contentSpeakers = document.querySelectorAll(".content-speaker");
 var song = document.querySelector(".song");
 
@@ -452,27 +455,71 @@ var current = null;
 var isAnimating = false;
 var isPlaying = false;
 
-var screenSize = window.innerWidth;
-var smallScreen = screenSize < 1025 ? true : false;
+var cardOpen = false;
 
 // Refresh page if window resize reaches below 1025px and handle visible mobile footer
 window.onresize = function() {
   xCenter = window.innerWidth / 2;
   yCenter = window.innerHeight / 2;
 
-  if (
-    (!smallScreen && window.innerWidth < 1025) ||
-    (smallScreen && window.innerWidth > 1024)
-  ) {
-    location.reload(true);
+  if (window.innerWidth > 1024 && lbOpen) {
+    closeLightbox();
+  }
+  if (window.innerWidth < 1025 && cardOpen) {
+    removeClones();
+    cardOpen = false;
+    enableScroll();
+  }
+
+  if (cardOpen) {
+    var centerClone = document.querySelector(".clone");
+    TweenMax.set(centerClone, {
+      x: xCenter - centerClone.offsetLeft,
+      y: yCenter - (centerClone.offsetTop + centerClone.offsetHeight / 2)
+    });
   }
 };
 
-window.onload = function() {
-  // Play music as it finishes to load
-  song.play();
-  isPlaying = true;
+// Event Listener for Page Visibility
+document.addEventListener(
+  "visibilitychange",
+  function() {
+    if (document.hidden) {
+      song.pause();
+    } else {
+      song.play();
+    }
+  },
+  false
+);
 
+// Event Listener for when the audio is playing
+song.addEventListener(
+  "playing",
+  function() {
+    isPlaying = true;
+    updateSpeakers();
+  },
+  false
+);
+
+// Event Listener for when the audio is paused
+song.addEventListener(
+  "pause",
+  function() {
+    isPlaying = false;
+    updateSpeakers();
+  },
+  false
+);
+
+// Event Listener for error with the audio playback
+song.onerror = function() {
+  console.log("Error " + song.error.code + "; details: " + song.error.message);
+  isPlaying = false;
+};
+
+window.onload = function() {
   // Remove loader when page is loaded
   TweenMax.to(loader, 0.7, {
     opacity: 0,
@@ -487,10 +534,12 @@ window.onload = function() {
 
   introTl
     .from(tag, 1, { yPercent: -100, ease: Power4.easeOut })
-    .from(openButton, 0.4, { opacity: 0 })
-    .from(introSpeakers[0], 0.4, { opacity: 0 });
+    .from(openButton, 0.4, { opacity: 0 });
+  // .from(introSpeakers[0], 0.4, { opacity: 0 });
 
   openButton.onclick = function() {
+    song.play();
+    gtag("event", "Start Animation");
     var iconTl = new TimelineMax();
     iconTl
       .addLabel("clearIcons")
@@ -505,96 +554,101 @@ window.onload = function() {
         },
         "clearIcons"
       )
-      .to(introSpeakers[0], 0.3, { opacity: 0 }, "clearIcons")
-      .to(".icons-container", 0.8, {
+      // .to(introSpeakers[0], 0.3, { opacity: 0 }, "clearIcons")
+      .to(".snow-container", 0.8, {
         bottom: 0,
         display: "block",
+        onStart: function() {
+          if (window.innerWidth > 1024) {
+            randomScale();
+          }
+        },
         onComplete: function onComplete() {
           mFooter.style.display = "block";
         }
       });
   };
 
-  var desktopIntro = new TimelineMax();
+  // var desktopIntro = new TimelineMax();
 
-  desktopIntro
-    .from(desktopTag, 1, { yPercent: -100, ease: Power4.easeOut })
-    .from(buttonDesktop, 0.3, {
-      opacity: 0
-    })
-    .from(introSpeakers[1], 0.4, { opacity: 0 });
+  // desktopIntro
+  //   .from(desktopTag, 1, { yPercent: -100, ease: Power4.easeOut })
+  //   .from(buttonDesktop, 0.3, {
+  //     opacity: 0
+  //   });
+  // // .from(introSpeakers[1], 0.4, { opacity: 0 });
 
-  buttonDesktop.onclick = function() {
-    var treeTl = new TimelineMax();
-    treeTl
-      .addLabel("clearIcons")
-      .to(
-        buttonDesktop,
-        0.3,
-        {
-          opacity: 0
-        },
-        "clearIcons"
-      )
-      .to(introSpeakers[1], 0.3, { opacity: 0 }, "clearIcons")
-      .to(
-        desktopTag,
-        0.8,
-        {
-          height: 0
-        },
-        "desktopPrep"
-      )
-      .to(
-        ".tree-container",
-        0.8,
-        {
-          bottom: 0,
-          display: "block",
-          onStart: randomScale,
-          onComplete: function onComplete() {
-            desktopFooter.style.display = "block";
-          }
-        },
-        "desktopPrep"
-      );
-  };
+  // buttonDesktop.onclick = function() {
+  //   song.play();
+  //   gtag("event", "Start Animation");
+  //   var treeTl = new TimelineMax();
+  //   treeTl
+  //     .addLabel("clearIcons")
+  //     .to(
+  //       buttonDesktop,
+  //       0.3,
+  //       {
+  //         opacity: 0
+  //       },
+  //       "clearIcons"
+  //     )
+  //     // .to(introSpeakers[1], 0.3, { opacity: 0 }, "clearIcons")
+  //     .to(
+  //       desktopTag,
+  //       0.8,
+  //       {
+  //         height: 0
+  //       },
+  //       "desktopPrep"
+  //     )
+  //     .to(
+  //       ".tree-container",
+  //       0.8,
+  //       {
+  //         bottom: 0,
+  //         display: "block",
+  //         onStart: randomScale,
+  //         onComplete: function onComplete() {
+  //           desktopFooter.style.display = "block";
+  //         }
+  //       },
+  //       "desktopPrep"
+  //     );
+  // };
 
   // Play music and change icon when speaker div is clicked
 
-  var _loop = function _loop(i) {
-    var speaker = introSpeakers[i];
-    speaker.onclick = function() {
-      if (isPlaying) {
-        song.pause();
-        speaker.children[0].src = "img/volume-off.svg";
-        isPlaying = false;
-        updateSpeakers();
-        return;
-      }
-      song.play();
-      speaker.children[0].src = "img/volume-on.svg";
-      isPlaying = true;
-      updateSpeakers();
-    };
-  };
+  // var _loop = function _loop(i) {
+  //   var speaker = introSpeakers[i];
+  //   speaker.onclick = function() {
+  //     if (isPlaying) {
+  //       song.pause();
+  //       speaker.children[0].src =
+  //         "/wp-content/themes/andersonmg/assets/img/christmas/volume-off.svg";
+  //       isPlaying = false;
+  //       updateSpeakers();
+  //       return;
+  //     }
+  //     song.play();
+  //     speaker.children[0].src =
+  //       "/wp-content/themes/andersonmg/assets/img/christmas/volume-on.svg";
+  //     isPlaying = true;
+  //     updateSpeakers();
+  //   };
+  // };
 
-  for (var i = 0; i < introSpeakers.length; i++) {
-    _loop(i);
-  }
+  // for (var i = 0; i < introSpeakers.length; i++) {
+  //   _loop(i);
+  // }
 
   for (var i = 0; i < contentSpeakers.length; i++) {
     var _speaker = contentSpeakers[i];
     _speaker.onclick = function() {
       if (isPlaying) {
         song.pause();
-        isPlaying = false;
-        updateSpeakers();
         return;
       }
       song.play();
-      isPlaying = true;
-      updateSpeakers();
     };
   }
 
@@ -645,8 +699,9 @@ window.onload = function() {
     var gift = gifts[_i3];
     gift.onclick = function() {
       isAnimating = true;
+      cardOpen = true;
       var clone = cloneOnTop(gift);
-      document.body.appendChild(clone);
+      snowContainer.appendChild(clone);
       zoomEffect(clone);
     };
   };
@@ -660,13 +715,13 @@ function updateSpeakers() {
   if (isPlaying) {
     for (var i = 0; i < contentSpeakers.length; i++) {
       var _speaker2 = contentSpeakers[i];
-      _speaker2.children[0].src = "img/volume-on.svg";
+      _speaker2.children[0].src = "./assets/img/christmas/volume-on.svg";
     }
     return;
   }
   for (var _i4 = 0; _i4 < contentSpeakers.length; _i4++) {
     var _speaker3 = contentSpeakers[_i4];
-    _speaker3.children[0].src = "img/volume-off.svg";
+    _speaker3.children[0].src = "./assets/img/christmas/volume-off.svg";
   }
 }
 
@@ -748,7 +803,12 @@ function cloneOnTop(el) {
 
 function zoomEffect(clone) {
   overlay.style.display = "block";
-  TweenMax.set(clone, { scale: 90 / clone.offsetWidth });
+  TweenMax.set(clone, {
+    scale:
+      window.innerHeight / 10 > 90
+        ? 90 / clone.offsetWidth
+        : window.innerHeight / 10 / clone.offsetWidth
+  });
   addCloseButton(clone);
   var tl = new TimelineMax({
     paused: true,
@@ -798,7 +858,7 @@ function removeClones() {
   var clones = document.querySelectorAll(".clone");
   for (var i = 0; i < clones.length; i++) {
     var clone = clones[i];
-    document.body.removeChild(clone);
+    snowContainer.removeChild(clone);
   }
 }
 
@@ -825,10 +885,14 @@ function zoomBack(clone, xPos, yPos, facesArray) {
       {
         x: xMove,
         y: yMove,
-        scale: 90 / clone.offsetWidth,
+        scale:
+          window.innerHeight / 10 > 90
+            ? 90 / clone.offsetWidth
+            : window.innerHeight / 10 / clone.offsetWidth,
         ease: Power4.easeOut,
         onComplete: function onComplete() {
           removeClones();
+          cardOpen = false;
           enableScroll();
         }
       },

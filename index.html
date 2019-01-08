@@ -4,75 +4,582 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-27079204-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-27079204-1");
+    </script>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="scss/main.css" />
+    <link rel="stylesheet" href="./assets/css/christmas.css" />
     <title>Christmas Tree</title>
   </head>
   <body>
     <div class="loader"><div class="spinner"></div></div>
-    <audio class="song" src="xmas-song.mp3" loop>
+    <audio class="song" src="./assets/xmas-song.mp3" loop>
       Your browser does not support the element.
     </audio>
     <section class="mobile-intro">
       <div class="tag-container">
-        <img class="tag" src="img/tag.png" alt="Gift Tag" />
+        <img class="tag" src="./assets/img/christmas/tag.png" alt="Gift Tag" />
       </div>
-      <div class="intro-volume">
-        <img src="img/volume-on.svg" alt="Volume On" />
-      </div>
-      <img class="open-button" src="img/btn.png" alt="Open" />
+      <!-- <div class="intro-volume">
+        <img src="./assets/img/christmas/volume-on.svg" alt="Volume On" />
+      </div> -->
+      <img
+        class="open-button"
+        src="./assets/img/christmas/btn.png"
+        alt="Open"
+      />
     </section>
-    <section class="icons-container">
-      <div class="content-speaker">
-        <img src="img/volume-on.svg" alt="Volume Control" />
+    <section class="snow-container">
+      <div class="icons-container">
+        <div class="content-speaker">
+          <img src="./assets/img/christmas/volume-on.svg" alt="Volume Control" />
+        </div>
+        <div class="icons-content">
+          <div class="icons-row">
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-01.jpg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-02.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-03.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-04.svg" alt="" />
+            </div>
+          </div>
+          <div class="icons-row">
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-05.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-06.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-07.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-22.svg" alt="" />
+            </div>
+          </div>
+          <div class="icons-row">
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-09.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-10.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-11.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-12.jpg" alt="" />
+            </div>
+          </div>
+          <div class="icons-row">
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-13.jpg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-14.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-15.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-16.svg" alt="" />
+            </div>
+          </div>
+          <div class="icons-row">
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-17.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-18.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-19.svg" alt="" />
+            </div>
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-20.svg" alt="" />
+            </div>
+          </div>
+          <div class="icons-row last-row">
+            <div class="icon">
+              <img src="./assets/img/christmas/icons/1-26.svg" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="icons-content">
-        <div class="icons-row">
-          <div class="icon"><img src="img/icons/1-01.jpg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-02.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-03.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-04.svg" alt="" /></div>
+      <div class="tree-container">
+        <div class="invisible"></div>
+        <div class="content-speaker">
+          <img src="./assets/img/christmas/volume-on.svg" alt="Volume Control" />
         </div>
-        <div class="icons-row">
-          <div class="icon"><img src="img/icons/1-05.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-06.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-07.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-22.svg" alt="" /></div>
-        </div>
-        <div class="icons-row">
-          <div class="icon"><img src="img/icons/1-09.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-10.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-11.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-12.jpg" alt="" /></div>
-        </div>
-        <div class="icons-row">
-          <div class="icon"><img src="img/icons/1-13.jpg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-14.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-15.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-16.svg" alt="" /></div>
-        </div>
-        <div class="icons-row">
-          <div class="icon"><img src="img/icons/1-17.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-18.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-19.svg" alt="" /></div>
-          <div class="icon"><img src="img/icons/1-20.svg" alt="" /></div>
-        </div>
-        <div class="icons-row last-row">
-          <div class="icon"><img src="img/icons/1-26.svg" alt="" /></div>
+        <div class="tree-content">
+          <div class="gift-row">
+            <div class="box">
+              <div class="front face">
+                <img src="./assets/img/christmas/gifts/1-01.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="gift-row">
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-08.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Who would’ve guessed that Alex would expand this cool circle
+                    of friends to become a specialist in social media? #squadgoals
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Alex@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-10.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Chris learned the secret of advertising at a young age. Drive
+                    the hottest wheels, look fantastic, and bring plenty of
+                    persuasion.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Chris@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gift-row">
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-21.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Who could’ve guessed that Chuck Anderson would give us
+                    permission to show our great clients how cute he used to be
+                    (and some would say still is)?
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Chuck@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-09.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    As an AE, Dennis fights for his clients day in and day out,
+                    all he needs is his coffee with a dollop of ice cream and he’s
+                    good to go.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Dennis@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-17.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Who would’ve guessed Derak would go on to hold up cameras, and
+                    cut back Superman to just weekends?
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Derak@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gift-row">
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-18.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    You know the funny kid who proudly “forgot” to wear pants, but
+                    turned out to write killer copy? That’s our Dirk.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Dirk@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-22.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Eddie asked Santa for his own candy shop, but Santa heard
+                    Photo Shop and the rest is history.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Eddie@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-02.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Who would’ve thought that Jacqueline would be as excited to
+                    handle your accounts as she was to meet Santa?
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Jacqueline@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-13.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Although all she wanted was her two front teeth, Janet also
+                    received some mad skills at media planning. Go figure.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Janet@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gift-row">
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-04.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Jimmy has always known how to dress to impress, which explains
+                    why he’s president of Shootz Production now!
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Jimmy@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-14.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Josh wanted to be a rocket scientist. And web developing is a
+                    science and he rocks it, so close enough.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Josh@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-11.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Ken is the invisible hand that keeps the agency running, and
+                    we know he loves us as much as he loved that dog, well almost.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Ken@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-20.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Calamity Kim here went from gun slinging outlaw to agency
+                    president. Talk about a smooth career transition.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Kim@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-16.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    On Marisa’s wish list was to become Santa’s little helper, but
+                    now she’s managing our traffic like a boss.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Marisa@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gift-row">
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-06.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    In addition to looking fly in red stockings, Mary is a pearl
+                    of wisdom and experience in design at the agency.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Mary@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-05.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Who would’ve thought that Matthew who loved playing in this
+                    box would one day love to think outside it?
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Matthew@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-13.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Who would’ve guessed Nick would choose a career of design over
+                    his potential as a child teddy bear model?
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Nick@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-19.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    When Orlando asked to be like Spiderman, he had a different
+                    web development in mind. Santa works in mysterious ways.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Orlando@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-15.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Soeurette loved her dolls so much, she got them their own
+                    house. And she works just as hard to bring new business to our
+                    house.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Soeurette@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-07.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    All things digital and design fall within Tiff’s valuable
+                    expertise, and when her team does well, the agency does well.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/Tiffany@1x.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gift-row">
+            <div class="box">
+              <div class="front face">
+                <img src="./assets/img/christmas/gifts/1-25.jpg" alt="" />
+              </div>
+            </div>
+            <div class="gift">
+              <div class="card">
+                <div class="front face">
+                  <img src="./assets/img/christmas/gifts/1-26.jpg" alt="" />
+                </div>
+                <div class="inner-left face">
+                  <p>
+                    Our childhoods formed who we are today, professionals in
+                    creativity, together truly making a family. From our family to
+                    yours, Merry Christmas and Happy Holidays.
+                  </p>
+                </div>
+                <div class="inner-right face">
+                  <img
+                    src="./assets/img/christmas/xmas/amg.jpg"
+                    alt="Gift Wrap"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="front face">
+                <img src="./assets/img/christmas/gifts/1-24.jpg" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    
 
     <section class="mobile-footer">
       <div class="logo-container">
-        <img class="logo" src="img/amg-logo.png" alt="AMG Logo" />
+        <img
+          class="logo"
+          src="./assets/img/christmas/amg-logo.png"
+          alt="AMG Logo"
+        />
       </div>
       <div class="text-container">
         <img
-          src="img/holidays-text.png"
+          src="./assets/img/christmas/holidays-text.png"
           alt="Happy Holidays"
           class="holidays"
         />
@@ -96,7 +603,11 @@
       <div class="lb-content">
         <span class="lb-close"></span>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Alex@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Alex@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -105,7 +616,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Chris@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Chris@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -114,7 +629,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Chuck@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Chuck@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -124,7 +643,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Dennis@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Dennis@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -133,7 +656,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Derak@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Derak@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -142,7 +669,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Dirk@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Dirk@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -151,7 +682,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Eddie@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Eddie@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -160,7 +695,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Jacqueline@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Jacqueline@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -169,7 +708,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Janet@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Janet@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -178,7 +721,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Jimmy@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Jimmy@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -187,7 +734,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Josh@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Josh@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -196,7 +747,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Ken@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Ken@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -205,7 +760,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Kim@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Kim@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -214,7 +773,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Marisa@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Marisa@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -223,7 +786,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Mary@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Mary@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -232,7 +799,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Matthew@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Matthew@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -241,7 +812,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Nick@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Nick@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -250,7 +825,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Orlando@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Orlando@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -259,7 +838,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Soeurette@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Soeurette@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -268,7 +851,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/Tiffany@1x.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/Tiffany@1x.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -277,7 +864,11 @@
           </p>
         </div>
         <div class="img-container">
-          <img class="lb-image" src="img/xmas/amg.jpg" alt="" />
+          <img
+            class="lb-image"
+            src="./assets/img/christmas/xmas/amg.jpg"
+            alt=""
+          />
         </div>
         <div class="snippet">
           <p>
@@ -295,401 +886,36 @@
       ------------------------------------------------
     -->
 
-    <section class="desktop-intro">
+    <!-- <section class="desktop-intro">
       <div class="desktop-tag-container">
-        <img class="desktop-tag" src="img/tag.png" alt="Gift Tag" />
+        <img
+          class="desktop-tag"
+          src="./assets/img/christmas/tag.png"
+          alt="Gift Tag"
+        />
       </div>
       <div class="intro-volume">
-        <img src="img/volume-on.svg" alt="Volume On" />
+        <img src="./assets/img/christmas/volume-on.svg" alt="Volume On" />
       </div>
-      <img class="desktop-open-button" src="img/btn.png" alt="Open" />
-    </section>
+      <img
+        class="desktop-open-button"
+        src="./assets/img/christmas/btn.png"
+        alt="Open"
+      />
+    </section> -->
 
-    <section class="tree-container">
-      <div class="invisible"></div>
-      <div class="content-speaker">
-        <img src="img/volume-on.svg" alt="Volume Control" />
-      </div>
-      <div class="tree-content">
-        <div class="gift-row">
-          <div class="box">
-            <div class="front face">
-              <img src="img/gifts/1-01.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="gift-row">
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-08.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Who would’ve guessed that Alex would expand this cool circle
-                  of friends to become a specialist in social media? #squadgoals
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Alex@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-10.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Chris learned the secret of advertising at a young age. Drive
-                  the hottest wheels, look fantastic, and bring plenty of
-                  persuasion.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Chris@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gift-row">
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-21.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Who could’ve guessed that Chuck Anderson would give us
-                  permission to show our great clients how cute he used to be
-                  (and some would say still is)?
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Chuck@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-09.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  As an AE, Dennis fights for his clients day in and day out,
-                  all he needs is his coffee with a dollop of ice cream and he’s
-                  good to go.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Dennis@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-17.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Who would’ve guessed Derak would go on to hold up cameras, and
-                  cut back Superman to just weekends?
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Derak@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gift-row">
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-18.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  You know the funny kid who proudly “forgot” to wear pants, but
-                  turned out to write killer copy? That’s our Dirk.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Dirk@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-22.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Eddie asked Santa for his own candy shop, but Santa heard
-                  Photo Shop and the rest is history.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Eddie@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-02.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Who would’ve thought that Jacqueline would be as excited to
-                  handle your accounts as she was to meet Santa?
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Jacqueline@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-13.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Although all she wanted was her two front teeth, Janet also
-                  received some mad skills at media planning. Go figure.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Janet@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gift-row">
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-04.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Jimmy has always known how to dress to impress, which explains
-                  why he’s president of Shootz Production now!
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Jimmy@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-14.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Josh wanted to be a rocket scientist. And web developing is a
-                  science and he rocks it, so close enough.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Josh@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-11.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Ken is the invisible hand that keeps the agency running, and
-                  we know he loves us as much as he loved that dog, well almost.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Ken@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-20.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Calamity Kim here went from gun slinging outlaw to agency
-                  president. Talk about a smooth career transition.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Kim@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-16.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  On Marisa’s wish list was to become Santa’s little helper, but
-                  now she’s managing our traffic like a boss.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Marisa@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gift-row">
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-06.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  In addition to looking fly in red stockings, Mary is a pearl
-                  of wisdom and experience in design at the agency.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Mary@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-05.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Who would’ve thought that Matthew who loved playing in this
-                  box would one day love to think outside it?
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Matthew@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-13.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Who would’ve guessed Nick would choose a career of design over
-                  his potential as a child teddy bear model?
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Nick@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-19.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  When Orlando asked to be like Spiderman, he had a different
-                  web development in mind. Santa works in mysterious ways.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Orlando@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-15.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Soeurette loved her dolls so much, she got them their own
-                  house. And she works just as hard to bring new business to our
-                  house.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Soeurette@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-07.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  All things digital and design fall within Tiff’s valuable
-                  expertise, and when her team does well, the agency does well.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/Tiffany@1x.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gift-row">
-          <div class="box">
-            <div class="front face">
-              <img src="img/gifts/1-25.jpg" alt="" />
-            </div>
-          </div>
-          <div class="gift">
-            <div class="card">
-              <div class="front face">
-                <img src="img/gifts/1-26.jpg" alt="" />
-              </div>
-              <div class="inner-left face">
-                <p>
-                  Our childhoods formed who we are today, professionals in
-                  creativity, together truly making a family. From our family to
-                  yours, Merry Christmas and Happy Holidays.
-                </p>
-              </div>
-              <div class="inner-right face">
-                <img src="img/xmas/amg.jpg" alt="Gift Wrap" />
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="front face">
-              <img src="img/gifts/1-24.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="desktop-footer">
+    
+    <!-- <section class="desktop-footer">
       <div class="desktop-logo-container">
-        <img class="desktop-logo" src="img/amg-logo.png" alt="AMG Logo" />
+        <img
+          class="desktop-logo"
+          src="./assets/img/christmas/amg-logo.png"
+          alt="AMG Logo"
+        />
       </div>
       <div class="desktop-text-container">
         <img
-          src="img/holidays-text.png"
+          src="./assets/img/christmas/holidays-text.png"
           alt="Happy Holidays"
           class="desktop-holidays"
         />
@@ -701,8 +927,8 @@
           through January 1. Our office will reopen on January 2.
         </p>
       </div>
-    </section>
+    </section> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="./assets/js/christmas.js"></script>
   </body>
 </html>

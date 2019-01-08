@@ -1,0 +1,942 @@
+/* CENTER VERTICALLY */
+/* LANDSCAPE MEDIA QUERIES */
+/* PORTRAIT MEDIA QUERIES */
+/* DESKTOP MEDIA QUERY */
+/* KEYFRAMES */
+/* CLEARFIX MIXIN */
+body, .mobile-intro .tag-container, .lightbox .lb-content, .desktop-intro .desktop-tag-container {
+  zoom: 1;
+}
+
+body:before, .mobile-intro .tag-container:before, .lightbox .lb-content:before, .desktop-intro .desktop-tag-container:before, body:after, .mobile-intro .tag-container:after, .lightbox .lb-content:after, .desktop-intro .desktop-tag-container:after {
+  content: " ";
+  display: table;
+}
+
+body:after, .mobile-intro .tag-container:after, .lightbox .lb-content:after, .desktop-intro .desktop-tag-container:after {
+  clear: both;
+}
+
+/*
+ *   GLOBAL STYLING
+ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  html {
+    overflow-y: scroll;
+  }
+}
+
+body {
+  position: relative;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+p {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+/**********************************************
+ *  LOADER STYLING
+ **********************************************/
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  background: #fff;
+}
+
+.loader .spinner {
+  border: 5px solid #a9a427;
+  border-radius: 6rem;
+  height: 6rem;
+  left: 50%;
+  margin: -3rem 0 0 -3rem;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  width: 6rem;
+  -webkit-animation: pulsate 1s ease-out;
+  animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/**********************************************
+ *  INTRO STYLING
+ **********************************************/
+.mobile-intro {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../img/intro-bg.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .mobile-intro {
+    display: none;
+  }
+}
+
+.mobile-intro .intro-volume {
+  width: 10%;
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-intro .intro-volume {
+    width: 5%;
+    bottom: 22%;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .intro-volume {
+    width: 3rem;
+    bottom: 25%;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .intro-volume {
+    width: 4rem;
+  }
+}
+
+.mobile-intro .tag-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.mobile-intro .tag-container .tag {
+  width: auto;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 0;
+  z-index: 3;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-intro .tag-container .tag {
+    height: 70%;
+  }
+}
+
+.mobile-intro .tag-container .is-pressed {
+  height: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.mobile-intro .open-button {
+  width: 12rem;
+  height: auto;
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-intro .open-button {
+    width: 20rem;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .open-button {
+    width: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-intro .open-button {
+    width: 15rem;
+  }
+}
+
+/**********************************************
+ *  MOBILE EXPERIENCE STYLING
+ **********************************************/
+.icons-container {
+  overflow: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  z-index: 2;
+  background-image: url("../img/snow-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .icons-container {
+    display: none;
+  }
+}
+
+.icons-container .content-speaker {
+  width: 10%;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .icons-container .content-speaker {
+    width: 8%;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .content-speaker {
+    width: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .content-speaker {
+    width: 4rem;
+  }
+}
+
+.icons-container .icons-content {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.icons-container .icons-content .icons-row {
+  width: 100%;
+  margin-top: 2rem;
+  padding-left: 4%;
+  padding-right: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.icons-container .icons-content .icons-row:first-of-type {
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .icons-container .icons-content .icons-row {
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-content .icons-row {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (min-width: 840px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-content .icons-row {
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-content .icons-row {
+    margin-top: 3rem;
+  }
+}
+
+.icons-container .icons-content .icons-row .icon {
+  width: 19vw;
+  height: 19vw;
+  cursor: pointer;
+  border-radius: 1rem;
+  overflow: hidden;
+  -webkit-transition: width 0.7s, height 0.7s;
+  transition: width 0.7s, height 0.7s;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-content .icons-row .icon {
+    width: 13vh;
+    height: 13vh;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .icons-container .icons-content .icons-row .icon {
+    width: 11vh;
+    height: 11vh;
+  }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .icons-container .icons-content .icons-row .icon {
+    width: 14vw;
+    height: 14vw;
+  }
+}
+
+.icons-container .icons-content .last-row {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/**********************************************
+ *  MOBILE FOOTER STYLING
+ **********************************************/
+.mobile-footer {
+  overflow: hidden;
+  width: 100%;
+  display: none;
+  text-align: center;
+  background-image: url("../img/footer-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .mobile-footer {
+    display: none;
+  }
+}
+
+.mobile-footer .logo-container,
+.mobile-footer .text-container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-footer .logo-container,
+  .mobile-footer .text-container {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer .logo-container,
+  .mobile-footer .text-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.mobile-footer .logo-container .logo,
+.mobile-footer .text-container .logo {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-footer .logo-container .logo,
+  .mobile-footer .text-container .logo {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer .logo-container .logo,
+  .mobile-footer .text-container .logo {
+    width: 20rem;
+  }
+}
+
+.mobile-footer .logo-container .holidays,
+.mobile-footer .text-container .holidays {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer .logo-container .holidays,
+  .mobile-footer .text-container .holidays {
+    width: 30rem;
+  }
+}
+
+.mobile-footer p {
+  width: 80%;
+  max-width: 60rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .mobile-footer p {
+    font-size: 2.6rem;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-footer p {
+    width: 45rem;
+  }
+}
+
+/**********************************************
+ *  LIGHTBOX STYLING
+ **********************************************/
+.lightbox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(32, 41, 69, 0.95);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.lightbox .lb-content {
+  width: 80%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
+  .lightbox .lb-content {
+    width: 90%;
+  }
+}
+
+.lightbox .lb-content .lb-close {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  position: absolute;
+  border-radius: 3rem;
+  top: -1rem;
+  right: -1rem;
+  z-index: 2;
+  opacity: 1;
+  text-align: center;
+  background: #aba400;
+  cursor: pointer;
+}
+
+.lightbox .lb-content .lb-close:before, .lightbox .lb-content .lb-close:after {
+  position: absolute;
+  top: 0.65rem;
+  left: 1.4rem;
+  content: " ";
+  height: 1.7rem;
+  width: 0.2rem;
+  background-color: white;
+}
+
+.lightbox .lb-content .lb-close:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.lightbox .lb-content .lb-close:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.lightbox .lb-content .img-container {
+  margin-bottom: 3rem;
+  border: 1rem solid #e9e9e9;
+  opacity: 1;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
+  .lightbox .lb-content .img-container {
+    width: 45%;
+    margin-bottom: 0;
+    float: right;
+  }
+}
+
+.lightbox .lb-content .snippet {
+  text-align: center;
+  opacity: 1;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1024px) and (orientation: landscape) {
+  .lightbox .lb-content .snippet {
+    width: 45%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+.lightbox .lb-content .snippet p {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .lightbox .lb-content .snippet p {
+    font-size: 2.4rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation: landscape) {
+  .lightbox .lb-content .snippet p {
+    font-size: 2.8rem;
+  }
+}
+
+/**********************************************
+ *  STATES FOR LIGHTBOX STYLING
+ **********************************************/
+.is-hidden {
+  z-index: -3;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.is-visible {
+  opacity: 1;
+  z-index: 4;
+  visibility: visible;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/**********************************************
+ *  DESKTOP INTRO STYLING
+ **********************************************/
+.desktop-intro {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: none;
+  background-image: url("../img/intro-bg.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .desktop-intro {
+    display: block;
+  }
+}
+
+.desktop-intro .desktop-tag-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.desktop-intro .desktop-tag-container .desktop-tag {
+  width: auto;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 0;
+  z-index: 3;
+}
+
+.desktop-intro .intro-volume {
+  width: 3%;
+  max-width: 5rem;
+  position: absolute;
+  bottom: 21%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.desktop-intro .desktop-open-button {
+  width: 15rem;
+  height: auto;
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+/**********************************************
+ *  DESKTOP EXPERIENCE STYLING
+ **********************************************/
+.tree-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  overflow: hidden;
+  position: absolute;
+  background-image: url("../img/snow-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tree-container .content-speaker {
+  width: 3rem;
+  position: absolute;
+  top: 4.5rem;
+  right: 3rem;
+  cursor: pointer;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 3;
+}
+
+.tree-container .tree-content {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.tree-container .tree-content .gift-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.tree-container .tree-content .gift-row .gift,
+.tree-container .tree-content .gift-row .box {
+  margin: 0.8rem;
+}
+
+.tree-container .tree-content .gift-row .gift .card:hover .face,
+.tree-container .tree-content .gift-row .box .card:hover .face {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.tree-container .tree-content .gift-row .gift .card:hover .front,
+.tree-container .tree-content .gift-row .gift .card:hover .inner-left,
+.tree-container .tree-content .gift-row .box .card:hover .front,
+.tree-container .tree-content .gift-row .box .card:hover .inner-left {
+  -webkit-transform: rotateY(-35deg);
+  transform: rotateY(-35deg);
+}
+
+.gift,
+.box {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  display: block;
+}
+
+.card {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-perspective: 200rem;
+          perspective: 200rem;
+  cursor: pointer;
+}
+
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.front {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 3;
+}
+
+.inner-left {
+  background: #202945;
+  z-index: 2;
+}
+
+.inner-left > p {
+  position: relative;
+  top: 50%;
+  padding: 5px;
+  opacity: 0;
+  font-size: 4px;
+  color: white;
+  -webkit-transform: translateZ(1000px) translateY(-50%) rotateY(-180deg);
+  transform: translateZ(1000px) translateY(-50%) rotateY(-180deg);
+  text-align: center;
+}
+
+.inner-right {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  z-index: 1;
+}
+
+.clone {
+  width: 32.5vw;
+  height: 32.5vw;
+  position: fixed;
+  z-index: 7;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+
+.clone .exit {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0.3rem;
+  position: absolute;
+  border-radius: 5rem;
+  top: -1.5rem;
+  right: -1.5rem;
+  z-index: 2;
+  opacity: 1;
+  text-align: center;
+  background: #aba400;
+  cursor: pointer;
+}
+
+.clone .exit:before, .clone .exit:after {
+  position: absolute;
+  top: 0.9rem;
+  left: 1.6rem;
+  content: " ";
+  height: 1.8rem;
+  width: 0.3rem;
+  background-color: white;
+}
+
+.clone .exit:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.clone .exit:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.clone .front,
+.clone .inner-left {
+  -webkit-transform: rotateY(-35deg);
+  transform: rotateY(-35deg);
+}
+
+.clone .inner-left > p {
+  padding: 3rem;
+  font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 1560px) and (orientation: landscape) {
+  .clone .inner-left > p {
+    padding: 4rem;
+    font-size: 2.4rem;
+  }
+}
+
+.invisible {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  display: none;
+}
+
+/**********************************************
+ *  DESKTOP FOOTER STYLING
+ **********************************************/
+.desktop-footer {
+  overflow: hidden;
+  width: 100%;
+  display: none;
+  text-align: center;
+  background-image: url("../img/footer-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  .desktop-footer {
+    display: none;
+  }
+}
+
+.desktop-footer .desktop-logo-container,
+.desktop-footer .desktop-text-container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .desktop-footer .desktop-logo-container,
+  .desktop-footer .desktop-text-container {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.desktop-footer .desktop-logo-container .desktop-logo,
+.desktop-footer .desktop-text-container .desktop-logo {
+  width: 20%;
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .desktop-footer .desktop-logo-container .desktop-logo,
+  .desktop-footer .desktop-text-container .desktop-logo {
+    width: 50%;
+  }
+}
+
+.desktop-footer .desktop-logo-container .desktop-holidays,
+.desktop-footer .desktop-text-container .desktop-holidays {
+  width: 30%;
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desktop-footer p {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: white;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) and (orientation: portrait) {
+  .desktop-footer p {
+    font-size: 2.6rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
